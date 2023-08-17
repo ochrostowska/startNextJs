@@ -3,15 +3,18 @@ import styles from "./button.module.scss";
 type Props = {
   label: string;
   icon?: string;
-  tint?: string;
-  mode?: "primary" | "secondary";
+  mode?: "primary" | "secondary" | "tertiary";
 };
 
-export const Button = ({ label, icon, tint, mode = "primary" }: Props) => {
-  const { btn } = styles;
+export const Button = ({ label, icon, mode = "primary" }: Props) => {
+  let className = styles.btn;
+
+  if (mode !== "primary") {
+    className += ` ${styles[`btn--${mode}`]}`;
+  }
 
   return (
-    <a href="#" className={btn}>
+    <a href="#" className={className}>
       {label}
     </a>
   );

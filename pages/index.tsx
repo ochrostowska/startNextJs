@@ -1,4 +1,6 @@
 // import { Buttonex } from "@/stories/Buttonex";
+import { H1 } from "@/components/Heading";
+import { SvgIcon } from "@/components/SvgIcon/SvgIcon";
 import Head from "next/head";
 import Image from "next/image";
 import { Button } from "../components/Button";
@@ -41,13 +43,19 @@ export default function Home() {
         <div className={styles.center}>
           <Image
             className={styles.logo}
-            src="/next.svg"
+            src="products/dachowa.svg"
             alt="Next.js Logo"
-            width={180}
-            height={37}
+            width={100}
+            height={100}
             priority
           />
+
           <Button label="Buttonex" />
+
+          <H1>
+            Hello <span>Oldzitta</span>
+          </H1>
+          <SvgIcon type="measure" />
         </div>
 
         <div className={styles.grid}>

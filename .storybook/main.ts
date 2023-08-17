@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
   staticDirs: ["../public"], //👈 Configures the static asset folder in Storybook
-  stories: ["../@(components)/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ["../@(components|svg)/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",

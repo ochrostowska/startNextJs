@@ -1,11 +1,14 @@
 @use "../../styles/main.scss" as *;
 
+$box-shadow: 8px 8px 0px 0px;
+$box-shadow-hover: 6px 6px 0px 0px;
+
 .btn {
   &,
   &:link,
   &:visited {
-    background-color: white;
-    color: black;
+    background-color: $color-white;
+    color: $color-almost-black;
     text-transform: uppercase;
     text-decoration: none;
     padding: 1.2rem 3rem;
@@ -15,14 +18,13 @@
     font-size: 1.6rem;
     font-weight: 500;
     letter-spacing: 0.6rem;
-    box-shadow: 8px 8px 0px 0px pink;
-
-    border: 2px solid black;
+    box-shadow: $box-shadow $color-primary;
+    border: 2px solid $color-almost-black;
     cursor: pointer;
   }
 
   &:hover {
-    box-shadow: 6px 6px 0px 0px pink;
+    box-shadow: $box-shadow-hover $color-primary;
   }
 
   &:active,
@@ -31,47 +33,31 @@
     box-shadow: none;
   }
 
-  // &--white {
-  //   background-color: $color-white;
-  //   color: $color-grey-dark;
+  &--secondary {
+    &,
+    &:link,
+    &:visited {
+      box-shadow: $box-shadow $color-secondary-light;
+    }
+  }
 
-  //   &::after {
-  //     background-color: $color-white;
-  //   }
-  // }
+  &--secondary {
+    &:hover {
+      box-shadow: $box-shadow-hover $color-secondary-light;
+    }
+  }
 
-  // &--green {
-  //   background-color: $color-primary;
-  //   color: $color-white;
+  &--tertiary {
+    &,
+    &:link,
+    &:visited {
+      box-shadow: $box-shadow $color-tertiary-light;
+    }
+  }
 
-  //   &::after {
-  //     background-color: $color-primary;
-  //   }
-  // }
+  &--tertiary {
+    &:hover {
+      box-shadow: $box-shadow-hover $color-tertiary-light;
+    }
+  }
 }
-// }
-
-// .btn-text {
-//   &:link,
-//   &:visited {
-//     font-size: $default-font-size;
-//     color: $color-primary;
-//     display: inline-block;
-//     text-decoration: none;
-//     border-bottom: 1px solid $color-primary;
-//     padding: 3px;
-//     transition: all 0.2s;
-//   }
-
-//   &:hover {
-//     background-color: $color-primary;
-//     color: $color-white;
-//     box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
-//     transform: translateY(-2px);
-//   }
-
-//   &:active {
-//     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
-//     transform: translateY(0);
-//   }
-// }
