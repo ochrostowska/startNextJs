@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+// import { Buttonex } from "@/stories/Buttonex";
+import Head from "next/head";
+import Image from "next/image";
+import { Button } from "../components/Button";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   return (
@@ -14,7 +13,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={`${styles.main} `}>
         <div className={styles.description}>
           <p>
             Get started by editing&nbsp;
@@ -26,7 +25,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -48,6 +47,7 @@ export default function Home() {
             height={37}
             priority
           />
+          <Button label="Buttonex" />
         </div>
 
         <div className={styles.grid}>
@@ -110,5 +110,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }

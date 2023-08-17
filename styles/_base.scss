@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+  // This defines what 1rem is => 10px/16px = 62.5% -> 1rem = 10px
+  font-size: 62.5%;
+
+  // we want the 1 rem to be 9px on landscape-tablets; 9px/16px = 62.5% -> 1rem = 9px
+  @include respond(tab-land) {
+    font-size: 62.5%;
+  }
+
+  // we want the 1 rem to be 8px on phones and portrait-tablets; 8px/16px = 50% -> 1rem = 8px
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  // we want the 1 rem to be 9px on big desktops; 12px/16px = 75% -> 1rem = 12px
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+.body {
+  box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) {
+    // removing the white border for < 900 px
+    padding: 0;
+  }
+}
+
+// apply custom style to the selected text
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
