@@ -1,9 +1,8 @@
 // import { Buttonex } from "@/stories/Buttonex";
-import { H1 } from "@/components/Heading";
-import { SvgIcon } from "@/components/SvgIcon/SvgIcon";
+import { Button } from "@/components/Button";
+import { Fragment } from "@/components/Fragment/Fragment";
+import { H1, H4 } from "@/components/Heading";
 import Head from "next/head";
-import Image from "next/image";
-import { Button } from "../components/Button";
 import styles from "../styles/Home.module.scss";
 
 export default function Home() {
@@ -16,106 +15,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={`${styles.main} `}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
+        <Fragment>
+          <div className={styles.hero}>
+            <div className={styles.hero__left}>
+              <H1>Whereas recognition of the inherent dignity</H1>
+              <H4>
+                Salon przesłon okiennych, systemów rolet i bram dla Twojego domu
+                i firmy
+              </H4>
+
+              <Button
+                label="Odwiedź nas"
+                icon="eye"
+                href="#"
+                className={styles.hero__button}
               />
-            </a>
+            </div>
+            <div className={styles.hero__right}>
+              <h1 className="title">Welcome to Next.js!</h1>
+            </div>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="products/dachowa.svg"
-            alt="Next.js Logo"
-            width={100}
-            height={100}
-            priority
-          />
-
-          <Button label="Buttonex" />
-
-          <H1>
-            Hello <span>Oldzitta</span>
-          </H1>
-          <SvgIcon type="measure" />
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+        </Fragment>
       </main>
     </>
   );
