@@ -1,0 +1,11 @@
+@keyframes swing {
+  27% {
+    transform: rotate(-2deg);
+  }
+  66% {
+    transform: rotate(1deg);
+  }
+  90% {
+    transform: rotate(-0.5deg);
+  }
+}
