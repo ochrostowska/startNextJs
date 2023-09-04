@@ -5,6 +5,7 @@ type Props = {
   borderLeftColor?: string;
   dashBottomColor?: string;
   dashTopColor?: string;
+  bigPadding?: boolean;
 };
 
 export const Fragment = ({
@@ -12,10 +13,11 @@ export const Fragment = ({
   borderLeftColor,
   dashBottomColor,
   dashTopColor,
+  bigPadding = false,
 }: PropsWithChildren<Props>) => {
   return (
     <div
-      className={`${styles.fragment} ${styles.border}`}
+      className={`${styles.fragment} ${bigPadding ? styles.bigPadding : ""}`}
       style={{
         borderLeft: borderLeftColor
           ? `8px solid ${borderLeftColor}`

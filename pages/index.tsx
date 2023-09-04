@@ -1,16 +1,19 @@
 // import { Buttonex } from "@/stories/Buttonex";
 import { Button } from "@/components/Button";
 import { Fragment } from "@/components/Fragment";
-import { H1, H4, H5 } from "@/components/Heading";
+import { H1, H2, H4, H5 } from "@/components/Heading";
 import { Photo } from "@/components/Photo";
 import { Sznurex } from "@/components/Sznurex";
 import { NavBar } from "@/layout/navbar";
+import { useTranslate } from "@/translations";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 import COLORS from "../styles/colorss.module.scss";
 
 export default function Home() {
+  const { translate } = useTranslate();
+
   return (
     <>
       <Head>
@@ -27,13 +30,10 @@ export default function Home() {
               <H1>
                 Ubierz swoje okna i maluj przestrzeń <span>światłem</span>
               </H1>
-              <H4>
-                Salon przesłon okiennych, systemów rolet i bram dla Twojego domu
-                i firmy
-              </H4>
+              <H4>{translate("heroSubtitle")}</H4>
 
               <Button
-                label="Odwiedź nas"
+                label={translate("heroButton")}
                 icon="eye"
                 href="#"
                 className={styles.hero__button}
@@ -47,6 +47,7 @@ export default function Home() {
                 width={1000}
                 className={styles.hero__right__image}
                 decorTint={COLORS.colorPrimaryDark}
+                decorLocation="bottom-left"
               />
             </div>
           </div>
@@ -61,14 +62,38 @@ export default function Home() {
               <Image
                 src={"/photos/animalFriendlyBadge2.png"}
                 alt="Animal friendly badge"
-                height={150}
-                width={150}
+                height={120}
+                width={120}
                 className={styles.animalFriendly__pic__image}
               />
             </div>
             <div className={styles.animalFriendly__text}>
-              <p>Odwiedź nas ze swoim czworonogiem</p>
-              <H5>Firma przyjazna zwierzętom</H5>
+              <p>{translate("animalFriendlyText1")}</p>
+              <H5>{translate("animalFriendlyText2")}</H5>
+            </div>
+          </div>
+        </Fragment>
+        <Fragment
+          borderLeftColor={COLORS.colorSecondaryLight}
+          bigPadding={true}
+        >
+          <div className={styles.hello}>
+            <div className={styles.hello__left}>
+              <H2>{translate("helloTitle")}</H2>
+              <p>{translate("helloText")}</p>
+            </div>
+            <div className={styles.hello__right}>
+              <div className={styles.hello__right__image}>
+                <Photo
+                  src={"/photos/cat_welcome.png"}
+                  alt="Cat hello"
+                  height={900}
+                  width={900}
+                  decorTint={COLORS.colorSecondaryLight}
+                  decorLocation="bottom-right"
+                  className={styles.hello__right__img}
+                />
+              </div>
             </div>
           </div>
         </Fragment>

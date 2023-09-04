@@ -1,4 +1,4 @@
-@use "../../styles/mixins.module" as *;
+@use "../../styles/main.scss" as *;
 
 .fragment {
   padding-top: 3rem;
@@ -15,5 +15,7 @@
   }
 }
 
-.border {
+.bigPadding {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
 }
