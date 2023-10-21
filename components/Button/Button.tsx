@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
-import { IconSvg, IconSvgTypes } from "../svg/IconSvg";
+import { IconSvg, IconSvgTypes } from "../Svg";
 import styles from "./button.module.scss";
 
 type Props = {

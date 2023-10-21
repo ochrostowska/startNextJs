@@ -1,0 +1,20 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M89.9135 87.7057C89.9135 87.0637 90.0882 86.4338 90.4189 85.8836V85.8836C91.7933 83.5968 95.1081 83.5968 96.4824 85.8836V85.8836C96.8131 86.4338 96.9878 87.0637 96.9878 87.7057V88.4188C96.9878 90.3723 95.4042 91.956 93.4507 91.956V91.956C91.4971 91.956 89.9135 90.3723 89.9135 88.4188V87.7057Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<line x1="8" y1="89.25" x2="85.8179" y2="89.25" stroke="black" stroke-width="1.5"/>
+<line x1="8" y1="76.25" x2="85.8179" y2="76.25" stroke="black" stroke-width="1.5"/>
+<line x1="8" y1="63.25" x2="85.8179" y2="63.25" stroke="black" stroke-width="1.5"/>
+<line x1="8" y1="50.25" x2="85.8179" y2="50.25" stroke="black" stroke-width="1.5"/>
+<line x1="8" y1="37.25" x2="85.8179" y2="37.25" stroke="black" stroke-width="1.5"/>
+<line x1="8" y1="24.25" x2="85.8179" y2="24.25" stroke="black" stroke-width="1.5"/>
+<line x1="8" y1="11.25" x2="85.8179" y2="11.25" stroke="black" stroke-width="1.5"/>
+<path d="M3 1H93.4506C95.4042 1 96.9878 2.58365 96.9878 4.53718V4.53718C96.9878 6.49071 95.4042 8.07435 93.4506 8.07435H3V1Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path d="M8.0531 8.07436H85.871V98.0197H8.0531V8.07436Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6.03186 9.07435H6.53717C9.04298 9.07435 11.0743 7.04299 11.0743 4.53718C11.0743 2.03136 9.04298 0 6.53717 0H6.03186V2H6.53717C7.93842 2 9.07435 3.13593 9.07435 4.53718C9.07435 5.93842 7.93842 7.07435 6.53717 7.07435H6.03186V9.07435Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.1169 9.07435H14.6222C17.128 9.07435 19.1593 7.04299 19.1593 4.53718C19.1593 2.03136 17.128 0 14.6222 0H14.1169V2H14.6222C16.0234 2 17.1593 3.13593 17.1593 4.53718C17.1593 5.93842 16.0234 7.07435 14.6222 7.07435H14.1169V9.07435Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M85.871 9.07435H86.3763C88.8821 9.07435 90.9135 7.04299 90.9135 4.53718C90.9135 2.03136 88.8821 0 86.3763 0H85.871V2H86.3763C87.7775 2 88.9135 3.13593 88.9135 4.53718C88.9135 5.93842 87.7775 7.07435 86.3763 7.07435H85.871V9.07435Z" fill="black"/>
+<line x1="93.9453" y1="9.07436" x2="93.9453" y2="80.8497" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 5"/>
+<rect x="8" y="12" width="78" height="12" fill="black" fill-opacity="0.25"/>
+<rect x="9" y="38" width="78" height="12" fill="black" fill-opacity="0.25"/>
+<rect x="8" y="90" width="78" height="9" fill="black" fill-opacity="0.25"/>
+<rect x="8" y="64" width="78" height="12" fill="black" fill-opacity="0.25"/>
+</svg>

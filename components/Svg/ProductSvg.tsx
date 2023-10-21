@@ -1,7 +1,7 @@
 import { RoofBlind } from "./products/RoofBlind";
 import { SVG_CONFIG } from "./svg.config";
 
-type ProductSvgTypes = "roof-blind";
+type ProductSvgTypes = "roof-blind" | "mosquito-net";
 type Props = {
   type: ProductSvgTypes;
   tint?: string;
@@ -16,13 +16,6 @@ export const ProductSvg = ({
 }: Props) => {
   switch (type) {
     case "roof-blind":
-      return (
-        <RoofBlind
-          stroke={tint}
-          width={size}
-          height={size}
-          strokeWidth={strokeWidth}
-        />
-      );
+      return <RoofBlind stroke={tint} width={size} height={size} />;
   }
 };

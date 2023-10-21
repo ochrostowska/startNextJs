@@ -1,0 +1,21 @@
+@use "../../styles/main.scss" as *;
+
+.sectionLink {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  transition: all 0.2s;
+
+  a {
+    font-size: 2.2rem;
+    transition: all 0.2s;
+    font-weight: 500;
+
+    @include respond(tab-port) {
+      font-size: 1.8rem;
+    }
+
+    &:hover {
+      box-shadow: inset 0 -1.5rem 0 $color-secondary-dark;
+    }
+  }
+}

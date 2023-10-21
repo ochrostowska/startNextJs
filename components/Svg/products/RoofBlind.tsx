@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 export const RoofBlind = (props: SVGProps<SVGSVGElement>) => {
-  const { strokeWidth, ...rest } = props;
+  const { strokeWidth, width, height, ...rest } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

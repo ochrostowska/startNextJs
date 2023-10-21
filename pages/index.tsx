@@ -3,15 +3,20 @@ import { Button } from "@/components/Button";
 import { Fragment } from "@/components/Fragment";
 import { H1, H2, H4, H5 } from "@/components/Heading";
 import { Photo } from "@/components/Photo";
+import { ProductsList } from "@/components/ProductsList/ProductsList";
+import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
 import { NavBar } from "@/layout/navbar";
-import { useTranslate } from "@/translations";
+import { TranslationKeys, translate, useTranslate } from "@/translations";
+import fs from "fs/promises";
 import Head from "next/head";
 import Image from "next/image";
+import path from "path";
 import styles from "../styles/Home.module.scss";
 import COLORS from "../styles/colorss.module.scss";
 
-export default function Home() {
+export default function Home(props) {
+  console.log("OLCIA pro", props.products);
   const { translate } = useTranslate();
 
   return (
@@ -97,8 +102,32 @@ export default function Home() {
             </div>
           </div>
         </Fragment>
+        <Fragment bigPadding={true} backgroundColor={COLORS.colorPrimaryLight}>
+          <H2>{translate("ourOffer")}</H2>
+
+          <ProductsList sections={props.products} />
+        </Fragment>
       </main>
       <Sznurex />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const filePath = path.join(process.cwd(), "data", "products.json");
+  const jsonData = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData.toString()) as ProductsListSection[];
+
+  data.forEach((section) => {
+    section.title = translate(section.title as TranslationKeys);
+    section.items.forEach((item) => {
+      item.label = translate(item.label as TranslationKeys);
+    });
+  });
+
+  return {
+    props: {
+      products: data,
+    },
+  };
 }

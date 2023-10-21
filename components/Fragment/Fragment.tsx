@@ -6,6 +6,7 @@ type Props = {
   dashBottomColor?: string;
   dashTopColor?: string;
   bigPadding?: boolean;
+  backgroundColor?: string;
 };
 
 export const Fragment = ({
@@ -13,6 +14,7 @@ export const Fragment = ({
   borderLeftColor,
   dashBottomColor,
   dashTopColor,
+  backgroundColor,
   bigPadding = false,
 }: PropsWithChildren<Props>) => {
   return (
@@ -26,6 +28,7 @@ export const Fragment = ({
           ? `2px dashed ${dashBottomColor}`
           : undefined,
         borderTop: dashTopColor ? `2px dashed ${dashTopColor}` : undefined,
+        backgroundColor,
       }}
     >
       {children}

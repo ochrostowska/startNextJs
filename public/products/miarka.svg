@@ -1,0 +1,19 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="100" height="100" fill="white"/>
+<path d="M61 49C61 65.0163 48.0163 78 32 78C15.9837 78 3 65.0163 3 49C3 32.9837 15.9837 20 32 20C48.0163 20 61 32.9837 61 49Z" stroke="black" stroke-width="2"/>
+<rect x="34.0164" y="50" width="27" height="28" stroke="black" stroke-width="2"/>
+<rect x="33" y="48" width="27" height="29" fill="white"/>
+<circle cx="32" cy="49" r="17" stroke="black" stroke-width="2"/>
+<circle cx="32" cy="49" r="12" stroke="black" stroke-width="2"/>
+<path d="M52 28L61 31.5V31.5C65.4664 32.9211 66.3351 38.8624 62.4625 41.5028L61 42.5" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<rect x="61" y="64" width="37" height="14" stroke="black" stroke-width="2" stroke-miterlimit="1.41421" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M99 56C99 55.4477 98.5523 55 98 55C97.4477 55 97 55.4477 97 56H99ZM97 56V65H99V56H97Z" fill="black"/>
+<path d="M74 69C74 68.4477 73.5523 68 73 68C72.4477 68 72 68.4477 72 69H74ZM72 69V78H74V69H72Z" fill="black"/>
+<path d="M86 69C86 68.4477 85.5523 68 85 68C84.4477 68 84 68.4477 84 69H86ZM84 69V78H86V69H84Z" fill="black"/>
+<path d="M78 73C78 72.4477 77.5523 72 77 72C76.4477 72 76 72.4477 76 73H78ZM76 73V78H78V73H76Z" fill="black"/>
+<path d="M82 73C82 72.4477 81.5523 72 81 72C80.4477 72 80 72.4477 80 73H82ZM80 73V78H82V73H80Z" fill="black"/>
+<path d="M90 73C90 72.4477 89.5523 72 89 72C88.4477 72 88 72.4477 88 73H90ZM88 73V78H90V73H88Z" fill="black"/>
+<path d="M94 73C94 72.4477 93.5523 72 93 72C92.4477 72 92 72.4477 92 73H94ZM92 73V78H94V73H92Z" fill="black"/>
+<path d="M70 73C70 72.4477 69.5523 72 69 72C68.4477 72 68 72.4477 68 73H70ZM68 73V78H70V73H68Z" fill="black"/>
+<path d="M66 73C66 72.4477 65.5523 72 65 72C64.4477 72 64 72.4477 64 73H66ZM64 73V78H66V73H64Z" fill="black"/>
+</svg>

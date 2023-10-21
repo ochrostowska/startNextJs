@@ -1,6 +1,7 @@
 export interface globalScss {
   colorPrimary: string;
   colorPrimaryLight: string;
+  colorPrimaryLight2: string;
   colorPrimaryDark: string;
   colorSecondaryLight: string;
   colorSecondaryDark: string;

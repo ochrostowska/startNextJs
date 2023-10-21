@@ -1,0 +1,21 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 1H97V8H4V1Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path d="M82.5 71.6313C82.5 70.9893 82.6747 70.3594 83.0054 69.8092V69.8092C84.3798 67.5224 87.6946 67.5224 89.0689 69.8092V69.8092C89.3996 70.3594 89.5744 70.9893 89.5744 71.6313V72.3444C89.5744 74.298 87.9907 75.8816 86.0372 75.8816V75.8816C84.0836 75.8816 82.5 74.298 82.5 72.3444V71.6313Z" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<line x1="85.75" y1="8.75" x2="85.75" y2="67.25" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7 20L2.5 42V42C1.76206 44.2138 3.40985 46.5 5.74342 46.5H53.5" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path d="M93 20L97.5 42V42C98.2379 44.2138 96.5902 46.5 94.2566 46.5H46.5" stroke="black" stroke-width="2" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.11267 47L1.71041 58.7444C0.806465 61.5867 2.9274 64.5 5.92225 64.5H46.6788V62.5H5.92225C4.27123 62.5 3.10542 60.8825 3.62751 59.3162L2.67883 59L3.65854 59.2004L6.15408 47H4.11267Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96.0662 47L98.4684 58.7444C99.3724 61.5867 97.2514 64.5 94.2566 64.5H53.5V62.5H94.2566C95.9076 62.5 97.0734 60.8825 96.5513 59.3162L97.5 59L96.5203 59.2004L94.0248 47H96.0662Z" fill="black"/>
+<line x1="42.5" y1="63.5" x2="56.5" y2="63.5" stroke="black" stroke-width="2"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M4.11267 64L1.71042 75.7444C0.806468 78.5867 2.92741 81.5 5.92225 81.5H46.6788V79.5H5.92225C4.27124 79.5 3.10542 77.8825 3.62752 76.3162L2.67883 76L3.65855 76.2004L6.15408 64H4.11267Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M96.0662 64L98.4684 75.7444C99.3724 78.5867 97.2514 81.5 94.2566 81.5H53.5V79.5H94.2566C95.9076 79.5 97.0734 77.8825 96.5513 76.3162L97.5 76L96.5203 76.2004L94.0248 64H96.0662Z" fill="black"/>
+<line x1="42.5" y1="80.5" x2="56.5" y2="80.5" stroke="black" stroke-width="2"/>
+<line x1="7" y1="9" x2="7" y2="20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+<line x1="9.75" y1="80.75" x2="9.75" y2="99.25" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="15.75" y1="80.75" x2="15.75" y2="93.25" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="15.75" y1="93.25" x2="83.75" y2="93.25" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="9.75" y1="99.25" x2="89.75" y2="99.25" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="89.75" y1="80.75" x2="89.75" y2="99.25" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="83.75" y1="80.75" x2="83.75" y2="93.25" stroke="black" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="93" y1="9" x2="93" y2="20" stroke="black" stroke-width="2" stroke-linecap="round"/>
+</svg>

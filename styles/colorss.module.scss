@@ -1,6 +1,7 @@
 // COLORS
 $color-primary: #f6c77f;
 $color-primary-light: #fdf3dd;
+$color-primary-light-2: #eee0bb;
 $color-primary-dark: #f4d94c;
 
 $color-secondary-light: #f4dae0;
@@ -23,6 +24,7 @@ $color-almost-black: #313131;
 :export {
   colorPrimary: $color-primary;
   colorPrimaryLight: $color-primary-light;
+  colorPrimaryLight2: $color-primary-light-2;
   colorPrimaryDark: $color-primary-dark;
   colorSecondaryLight: $color-secondary-light;
   colorSecondaryDark: $color-secondary-dark;
