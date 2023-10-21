@@ -1,13 +1,15 @@
-import { FONTS } from "@/lib/fontLoader";
+import theme from "@/styles/theme";
 import type { AppProps } from "next/app";
-import styles from "../styles/globals.scss";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "../styles/globalstyles";
 
 export default function App({ Component, pageProps }: AppProps) {
-  console.log("OLCIA", styles);
-
   return (
-    <div className={FONTS.poppins.className}>
-      <Component {...pageProps} />
-    </div>
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </>
   );
 }

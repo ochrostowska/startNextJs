@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import styles from "./fragment.module.scss";
+import styled from "styled-components";
 
 type Props = {
   borderLeftColor?: string;
@@ -18,20 +18,36 @@ export const Fragment = ({
   bigPadding = false,
 }: PropsWithChildren<Props>) => {
   return (
-    <div
-      className={`${styles.fragment} ${bigPadding ? styles.bigPadding : ""}`}
-      style={{
-        borderLeft: borderLeftColor
-          ? `8px solid ${borderLeftColor}`
-          : undefined,
-        borderBottom: dashBottomColor
-          ? `2px dashed ${dashBottomColor}`
-          : undefined,
-        borderTop: dashTopColor ? `2px dashed ${dashTopColor}` : undefined,
-        backgroundColor,
-      }}
+    <StyledFragment
+      bigPadding={bigPadding}
+      borderLeftColor={borderLeftColor}
+      dashBottomColor={dashBottomColor}
+      dashTopColor={dashTopColor}
+      backgroundColor={backgroundColor}
     >
       {children}
-    </div>
+    </StyledFragment>
   );
 };
+
+export const StyledFragment = styled.div<Props>`
+  padding-top: ${(props) => (props.bigPadding ? "8rem" : "3rem")};
+  padding-bottom: ${(props) => (props.bigPadding ? "8rem" : "3rem")};
+  padding-left: 13rem;
+  padding-right: 13rem;
+
+  border-left: ${(props) =>
+    props.borderLeftColor && `8px solid ${props.borderLeftColor}`};
+  border-bottom: ${(props) =>
+    props.dashBottomColor && `2px dashed ${props.dashBottomColor}`};
+  border-top: ${(props) =>
+    props.dashTopColor && `2px dashed ${props.dashTopColor}`};
+  background-color: ${(props) => props.backgroundColor || "transparent"};
+
+  @media ${(props) => props.theme.media.tabPort} {
+    padding-top: ${(props) => (props.bigPadding ? "8rem" : "2rem")};
+    padding-bottom: ${(props) => (props.bigPadding ? "8rem" : "2rem")};
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+`;

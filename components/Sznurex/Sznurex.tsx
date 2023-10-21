@@ -1,10 +1,28 @@
+import ANIMATIONS from "@/styles/animations";
 import Image from "next/image";
-import styles from "./sznurex.module.scss";
+import styled from "styled-components";
 
 export const Sznurex = () => {
   return (
-    <div className={styles.sznurex}>
+    <SznurexDiv>
       <Image src={"/sznurex.svg"} alt="Sznurex" width={40} height={565} />
-    </div>
+    </SznurexDiv>
   );
 };
+
+const SznurexDiv = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: ${(props) => props.theme.constants.fragmentHorizontalOffset};
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  &:hover {
+    transform-origin: center top; // make the animation start from the top and not the center of an image
+    animation: ${ANIMATIONS.swing} 2s ease-in-out;
+  }
+  @media ${(props) => props.theme.media.tabPort} {
+    display: none;
+  }
+`;

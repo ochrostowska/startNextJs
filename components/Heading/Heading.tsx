@@ -1,43 +1,109 @@
 import { PropsWithChildren } from "react";
-import { FONTS } from "../../lib/fontLoader";
-import styles from "./heading.module.scss";
+import styled, { css } from "styled-components";
+
+// Base Styles
+const BaseStyles = css`
+  font-family: "Lora";
+  color: ${(props) => props.theme.colors.almostBlack};
+`;
+
+const H1Styles = css`
+  ${BaseStyles}
+  font-size: 5.8rem;
+  line-height: 115%;
+  font-weight: 600;
+  margin-bottom: 2.4rem;
+
+  span {
+    transition: all 0.5s;
+    box-shadow: inset 0 -2.5rem 0 ${(props) => props.theme.colors.primaryLight};
+
+    &:hover {
+      color: ${(props) => props.theme.colors.primary};
+    }
+  }
+
+  @media ${(props) => props.theme.media.tabLand} {
+    font-size: 4rem;
+  }
+
+  @media ${(props) => props.theme.media.bigDesktop} {
+    font-size: 6.2rem;
+  }
+`;
+
+const H2Styles = css`
+  ${BaseStyles}
+  font-size: 4.4rem;
+  line-height: 120%;
+
+  @media ${(props) => props.theme.media.tabLand} {
+    font-size: 3rem;
+  }
+
+  @media ${(props) => props.theme.media.tabPort} {
+    font-size: 2.6rem;
+  }
+`;
+
+const H3Styles = css`
+  font-size: 2.2rem;
+
+  @media ${(props) => props.theme.media.tabPort} {
+    font-size: 1.8rem;
+  }
+`;
+
+const H4Styles = css`
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin-bottom: 4rem;
+
+  @media ${(props) => props.theme.media.tabLand} {
+    font-size: 2rem;
+  }
+
+  @media ${(props) => props.theme.media.tabPort} {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+  }
+`;
+
+const H5Styles = css`
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.6rem;
+  line-height: 1.8rem;
+
+  @media ${(props) => props.theme.media.tabLand} {
+    font-size: 1.6rem;
+  }
+`;
+
+export const H1 = styled.h1`
+  ${H1Styles}
+`;
+
+export const H2 = styled.h2`
+  ${H2Styles}
+`;
+
+export const H3 = styled.h3`
+  ${H3Styles}
+`;
+
+export const H4 = styled.h4`
+  ${H4Styles}
+`;
+
+export const H5 = styled.h5`
+  ${H5Styles}
+`;
 
 type Props = {
   type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-};
-
-export const H1 = ({ children }: PropsWithChildren) => {
-  const { h1 } = styles;
-
-  return (
-    <div className={FONTS.lora.className}>
-      <h1 className={h1}>{children}</h1>
-    </div>
-  );
-};
-
-export const H2 = ({ children }: PropsWithChildren) => {
-  const { h2 } = styles;
-
-  return (
-    <div className={FONTS.lora.className}>
-      <h2 className={h2}>{children}</h2>
-    </div>
-  );
-};
-
-export const H3 = ({ children }: PropsWithChildren) => {
-  const { h3 } = styles;
-  return <h3 className={h3}>{children}</h3>;
-};
-export const H4 = ({ children }: PropsWithChildren) => {
-  const { h4 } = styles;
-  return <h4 className={h4}>{children}</h4>;
-};
-
-export const H5 = ({ children }: PropsWithChildren) => {
-  const { h5 } = styles;
-  return <h5 className={h5}>{children}</h5>;
 };
 
 export const H = ({ type, children }: PropsWithChildren<Props>) => {
@@ -52,5 +118,7 @@ export const H = ({ type, children }: PropsWithChildren<Props>) => {
       return <H4>{children}</H4>;
     case "h5":
       return <H5>{children}</H5>;
+    default:
+      return null;
   }
 };
