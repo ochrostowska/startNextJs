@@ -1,5 +1,4 @@
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
-import { useTranslate } from "@/translations";
 import styled from "styled-components";
 import { SectionLink } from "../SectionLink";
 import { ProductTile } from "./ProductTile";
@@ -24,8 +23,6 @@ export const ProductSection = ({
   const paddingSize = 10;
   const minSize = iconSize + paddingSize * 2;
 
-  const { translate } = useTranslate();
-
   return (
     <div>
       <SectionLink href={titleHref} label={title} />
@@ -49,9 +46,10 @@ export const ProductSection = ({
 
 const Section = styled.div<{ minsize: number }>(({ minsize }) => ({
   display: "grid",
-  gridTemplateColumns: `repeat(auto-fit, minmax(${minsize}px, 1fr))`,
+  gridTemplateColumns: `repeat(auto-fill, minmax(${minsize}px, 1fr))`,
   justifyContent: "flex-start",
+  justifyItems: "start",
   flexWrap: "wrap",
   gap: "7rem",
-  alignItems: "center",
+  alignItems: "flex-start",
 }));

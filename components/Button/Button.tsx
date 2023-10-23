@@ -1,10 +1,22 @@
-import { faEye, faLocation } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRightLong,
+  faEye,
+  faLocation,
+  faRuler,
+  faScrewdriverWrench,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
 import styled, { css } from "styled-components";
 
-type SupportedIcons = "eye" | "location";
+type SupportedIcons =
+  | "eye"
+  | "location"
+  | "arrow-right"
+  | "ruler"
+  | "installation";
 
 const iconToFaIcon = (icon: SupportedIcons) => {
   switch (icon) {
@@ -12,6 +24,12 @@ const iconToFaIcon = (icon: SupportedIcons) => {
       return faEye;
     case "location":
       return faLocation;
+    case "arrow-right":
+      return faArrowRightLong;
+    case "ruler":
+      return faRuler;
+    case "installation":
+      return faScrewdriverWrench;
   }
 };
 
@@ -20,14 +38,26 @@ type Props = {
   variant?: "secondary" | "tertiary";
   href?: string;
   icon?: SupportedIcons;
+  svgIcon?: string;
   onClick?: () => void;
 };
 
-export const Button = ({ label, variant, icon, href, onClick }: Props) => {
+export const Button = ({
+  label,
+  variant,
+  icon,
+  svgIcon,
+  href,
+  onClick,
+}: Props) => {
   const IconComponent = useMemo(() => {
     const iconComponent = icon ? iconToFaIcon(icon) : null;
-    return iconComponent ? <Icon height="1.6rem" icon={iconComponent} /> : null;
-  }, [icon]);
+    return iconComponent ? (
+      <Icon height="1.6rem" icon={iconComponent} />
+    ) : svgIcon ? (
+      <Image width={40} height={40} src={svgIcon} alt={label} />
+    ) : null;
+  }, [icon, svgIcon]);
 
   if (href) {
     return (
@@ -61,15 +91,12 @@ const ButtonBase = css<ButtonBaseProps>`
   text-decoration: none;
   padding: 1.2rem 2.4rem;
   transition: all 0.2s;
-  position: relative;
   font-size: 1.8rem;
   font-family: Poppins, sans-serif;
   font-weight: 500;
-  margin: 0;
   letter-spacing: 0.4rem;
   box-shadow: ${boxShadow} ${(props) => props.theme.colors.primary};
   border: 2px solid ${(props) => props.theme.colors.almostBlack};
-  display: inline;
   cursor: pointer;
 
   @media ${(props) => props.theme.media.tabLand} {

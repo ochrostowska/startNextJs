@@ -47,10 +47,12 @@ const H2Styles = css`
 `;
 
 const H3Styles = css`
-  font-size: 2.2rem;
+  ${BaseStyles}
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
 
   @media ${(props) => props.theme.media.tabPort} {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 `;
 
