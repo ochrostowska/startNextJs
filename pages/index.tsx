@@ -2,6 +2,7 @@
 import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
 import { NavBar } from "@/layout/navbar";
+import { useManufacturers } from "@/services/manufacturers/useManufacturers";
 import { TranslationKeys, translate, useTranslate } from "@/translations";
 import fs from "fs/promises";
 import Head from "next/head";
@@ -10,15 +11,17 @@ import styles from "../styles/Home.module.scss";
 import { AnimalFriendlyFragment } from "./_home/AnimalFriendlyFragment";
 import { Hero } from "./_home/Hero";
 import { InstallInstructionFragment } from "./_home/InstallInstructionsFragment";
+import { ManufacturersFragment } from "./_home/ManufacturersFragment";
 import { MeasurementCardsFragment } from "./_home/MeasurementCardsFragment";
 import { ProductsFragment } from "./_home/ProductsFragment";
 import { ServicesFragment } from "./_home/ServicesFragment";
 import { WelcomeFragment } from "./_home/WelcomeFragment";
 
 export default function Home(props) {
-  console.log("OLCIA pro", props.products);
   const { translate } = useTranslate();
 
+  const all = useManufacturers();
+  console.log("all", all);
   return (
     <>
       <Head>
@@ -36,6 +39,7 @@ export default function Home(props) {
         <ServicesFragment />
         <MeasurementCardsFragment />
         <InstallInstructionFragment />
+        <ManufacturersFragment />
       </main>
       <Sznurex />
     </>

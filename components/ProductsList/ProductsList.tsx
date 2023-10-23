@@ -4,11 +4,7 @@ import { ProductsListSection } from "./types";
 type Props = { sections: ProductsListSection[] };
 export const ProductsList = (props: Props) => {
   const { sections } = props;
-
-  console.log("ProductsList", sections);
   if (!sections?.length) return null;
-
-  console.log("ProductsList2", sections);
 
   return (
     <>
