@@ -1,4 +1,3 @@
-import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 import COLORS from "../../styles/colorss.module.scss";
@@ -18,7 +17,6 @@ export const ProductTile = ({
   padding,
 }: Props) => {
   const iconWrapperWidth = size + padding * 2;
-  const { translate } = useTranslate();
   return (
     <Wrapper>
       <a href={href} style={{ alignItems: "flex-end" }}>

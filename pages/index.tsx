@@ -9,6 +9,7 @@ import Head from "next/head";
 import path from "path";
 import styles from "../styles/Home.module.scss";
 import { AnimalFriendlyFragment } from "./_home/AnimalFriendlyFragment";
+import { GalleryFragment } from "./_home/GalleryFragment";
 import { Hero } from "./_home/Hero";
 import { InstallInstructionFragment } from "./_home/InstallInstructionsFragment";
 import { ManufacturersFragment } from "./_home/ManufacturersFragment";
@@ -40,6 +41,7 @@ export default function Home(props) {
         <MeasurementCardsFragment />
         <InstallInstructionFragment />
         <ManufacturersFragment />
+        <GalleryFragment />
       </main>
       <Sznurex />
     </>

@@ -53,13 +53,8 @@ export const InstallInstructionFragment = () => {
 
           <IconWrapper
             style={{
-              position: "absolute",
-              bottom: -20,
-              left: 0,
               width: iconSize,
               height: iconSize,
-              alignItems: "center",
-              justifyContent: "center",
             }}
           >
             <Image
@@ -67,7 +62,6 @@ export const InstallInstructionFragment = () => {
               alt={translate("measurementCards.title")}
               height={iconSize * 0.7}
               width={iconSize * 0.7}
-              style={{ alignSelf: "center" }}
             />
           </IconWrapper>
         </WrapperRight>
@@ -80,6 +74,12 @@ const IconWrapper = styled.div`
   background-color: white;
   box-shadow: 8px 8px 0px 0px ${COLORS.primaryDark};
   transition: all 0.2s;
+  position: absolute;
+  bottom: -2em;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Wrapper = styled.div`
