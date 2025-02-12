@@ -84,6 +84,21 @@ const H5Styles = css`
   }
 `;
 
+const TinyLabelStyles = css`
+  font-size: 1.4rem;
+  transition: all 0.2s;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  @media ${(props) => props.theme.media.tabPort} {
+    font-size: 1.1rem;
+  }
+`;
+
+export const TinyLabel = styled.p`
+  ${TinyLabelStyles}
+`;
+
 export const H1 = styled.h1`
   ${H1Styles}
 `;
