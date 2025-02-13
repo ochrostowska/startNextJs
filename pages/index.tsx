@@ -8,15 +8,16 @@ import fs from "fs/promises";
 import Head from "next/head";
 import path from "path";
 import styles from "../styles/Home.module.scss";
-import { AnimalFriendlyFragment } from "./_home/AnimalFriendlyFragment";
-import { GalleryFragment } from "./_home/GalleryFragment";
-import { Hero } from "./_home/Hero";
-import { InstallInstructionFragment } from "./_home/InstallInstructionsFragment";
-import { ManufacturersFragment } from "./_home/ManufacturersFragment";
-import { MeasurementCardsFragment } from "./_home/MeasurementCardsFragment";
-import { ProductsFragment } from "./_home/ProductsFragment";
-import { ServicesFragment } from "./_home/ServicesFragment";
-import { WelcomeFragment } from "./_home/WelcomeFragment";
+import AnimalFriendlyFragment from "./_home/AnimalFriendlyFragment";
+import ContactFragment from "./_home/ContactFragment";
+import GalleryFragment from "./_home/GalleryFragment";
+import Hero from "./_home/Hero";
+import InstallInstructionFragment from "./_home/InstallInstructionsFragment";
+import ManufacturersFragment from "./_home/ManufacturersFragment";
+import MeasurementCardsFragment from "./_home/MeasurementCardsFragment";
+import ProductsFragment from "./_home/ProductsFragment";
+import ServicesFragment from "./_home/ServicesFragment";
+import WelcomeFragment from "./_home/WelcomeFragment";
 
 type Props = {
   products: ProductsListSection[];
@@ -46,6 +47,8 @@ export default function Home(props: Props) {
         <InstallInstructionFragment />
         <ManufacturersFragment />
         <GalleryFragment />
+        <ContactFragment />
+        <ContactFragment />
       </main>
       <Sznurex />
     </>

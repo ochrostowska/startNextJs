@@ -5,8 +5,7 @@ import { useResponsiveValue } from "@/hooks/useResponsiveSize";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
-
-export const ServicesFragment = () => {
+const ServicesFragment = () => {
   const { translate } = useTranslate();
 
   const services: SingleServiceProps[] = [
@@ -148,3 +147,5 @@ const SingleServiceWrapper = styled.div`
     }
   }
 `;
+
+export default ServicesFragment;

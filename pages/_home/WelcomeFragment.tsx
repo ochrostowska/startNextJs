@@ -6,7 +6,7 @@ import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import styled from "styled-components";
 
-export const WelcomeFragment = () => {
+const WelcomeFragment = () => {
   const { translate } = useTranslate();
 
   const badgeSize = useResponsiveValue(100, {
@@ -71,3 +71,5 @@ const StyledPhoto = styled(Photo)`
   height: 100%;
   object-fit: cover;
 `;
+
+export default WelcomeFragment;

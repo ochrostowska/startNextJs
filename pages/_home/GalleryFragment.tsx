@@ -7,7 +7,7 @@ import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import styled from "styled-components";
 
-export const GalleryFragment = () => {
+const GalleryFragment = () => {
   const { translate } = useTranslate();
 
   const maxPhotoSize = useResponsiveValue(320, {
@@ -90,3 +90,5 @@ const GalleryItems = styled.div`
     flex-direction: column;
   }
 `;
+
+export default GalleryFragment;

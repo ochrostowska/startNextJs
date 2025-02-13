@@ -6,7 +6,7 @@ import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
-export const AnimalFriendlyFragment = () => {
+const AnimalFriendlyFragment = () => {
   const { translate } = useTranslate();
 
   const badgeSize = useResponsiveValue(100, {
@@ -51,3 +51,5 @@ const TextContainer = styled.div`
   gap: 0.5rem;
   align-items: center;
 `;
+
+export default AnimalFriendlyFragment;

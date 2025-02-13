@@ -10,7 +10,7 @@ type Props = {
   productSections: ProductsListSection[];
 };
 
-export const ProductsFragment = ({ productSections }: Props) => {
+const ProductsFragment = ({ productSections }: Props) => {
   const { translate } = useTranslate();
 
   const badgeSize = useResponsiveValue(100, {
@@ -27,3 +27,5 @@ export const ProductsFragment = ({ productSections }: Props) => {
     </Fragment>
   );
 };
+
+export default ProductsFragment;

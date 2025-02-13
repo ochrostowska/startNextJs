@@ -8,7 +8,7 @@ import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
-export const ManufacturersFragment = () => {
+const ManufacturersFragment = () => {
   const { translate } = useTranslate();
 
   const { data } = useManufacturers();
@@ -97,3 +97,5 @@ const LogoAnchor = styled.a`
 const Loading = styled(Spinner)`
   margin: 2rem;
 `;
+
+export default ManufacturersFragment;

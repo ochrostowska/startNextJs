@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const photoSize = 1000;
 
-export const Hero = () => {
+const Hero = () => {
   const { translate } = useTranslate();
 
   const title = translate("heroTitle");
@@ -64,3 +64,5 @@ const HeroImage = styled(Photo)`
   height: 100%;
   object-fit: cover;
 `;
+
+export default Hero;

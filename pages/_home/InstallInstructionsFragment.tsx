@@ -8,7 +8,7 @@ import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
-export const InstallInstructionFragment = () => {
+const InstallInstructionFragment = () => {
   const { translate } = useTranslate();
 
   const iconSize = useResponsiveValue(80, {
@@ -121,3 +121,5 @@ const StyledPhoto = styled(Photo)`
   height: 100%;
   object-fit: cover;
 `;
+
+export default InstallInstructionFragment;

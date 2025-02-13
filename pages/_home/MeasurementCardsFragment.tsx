@@ -8,7 +8,7 @@ import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
-export const MeasurementCardsFragment = () => {
+const MeasurementCardsFragment = () => {
   const { translate } = useTranslate();
 
   const iconHeight = useResponsiveValue(60, {
@@ -103,3 +103,5 @@ const StyledPhoto = styled(Photo)`
   height: 100%;
   object-fit: cover;
 `;
+
+export default MeasurementCardsFragment;
