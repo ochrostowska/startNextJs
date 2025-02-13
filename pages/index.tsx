@@ -2,7 +2,6 @@
 import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
 import { NavBar } from "@/layout/navbar";
-import { useManufacturers } from "@/services/manufacturers/useManufacturers";
 import { TranslationKeys, translate, useTranslate } from "@/translations";
 import fs from "fs/promises";
 import Head from "next/head";
@@ -26,8 +25,8 @@ type Props = {
 export default function Home(props: Props) {
   const { translate } = useTranslate();
 
-  const all = useManufacturers();
-  console.log("all", all);
+  // const all = [useManufacturers();]
+  // console.log("all", all);
   return (
     <>
       <Head>
