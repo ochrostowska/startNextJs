@@ -18,7 +18,11 @@ import { ProductsFragment } from "./_home/ProductsFragment";
 import { ServicesFragment } from "./_home/ServicesFragment";
 import { WelcomeFragment } from "./_home/WelcomeFragment";
 
-export default function Home(props) {
+type Props = {
+  products: ProductsListSection[];
+};
+
+export default function Home(props: Props) {
   const { translate } = useTranslate();
 
   const all = useManufacturers();

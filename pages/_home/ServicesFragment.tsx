@@ -1,4 +1,4 @@
-import { Button } from "@/components/Button";
+import { Button, isValidButtonIcon } from "@/components/Button";
 import { Fragment } from "@/components/Fragment";
 import { H2, H3 } from "@/components/Heading";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
@@ -97,7 +97,11 @@ const SingleService = ({
             );
           })}
           <ServiceButton>
-            <Button label={buttonLabel} href={buttonHref} icon={buttonIcon} />
+            <Button
+              label={buttonLabel}
+              href={buttonHref}
+              icon={isValidButtonIcon(buttonIcon) ? buttonIcon : undefined}
+            />
           </ServiceButton>
         </div>
       </SingleServiceWrapper>

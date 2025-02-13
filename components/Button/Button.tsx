@@ -11,14 +11,21 @@ import Link from "next/link";
 import { useMemo } from "react";
 import styled, { css } from "styled-components";
 
-type SupportedIcons =
-  | "eye"
-  | "location"
-  | "arrow-right"
-  | "ruler"
-  | "installation";
+export const BUTTON_ICONS = [
+  "eye",
+  "location",
+  "arrow-right",
+  "ruler",
+  "installation",
+] as const;
 
-const iconToFaIcon = (icon: SupportedIcons) => {
+export type ButtonIcon = (typeof BUTTON_ICONS)[number];
+
+export function isValidButtonIcon(icon: string): icon is ButtonIcon {
+  return BUTTON_ICONS.includes(icon as ButtonIcon);
+}
+
+const iconToFaIcon = (icon: ButtonIcon) => {
   switch (icon) {
     case "eye":
       return faEye;
@@ -37,7 +44,7 @@ type Props = {
   label: string;
   variant?: "secondary" | "tertiary";
   href?: string;
-  icon?: SupportedIcons;
+  icon?: ButtonIcon;
   svgIcon?: string;
   onClick?: () => void;
 };
@@ -57,7 +64,7 @@ export const Button = ({
     ) : svgIcon ? (
       <Image width={40} height={40} src={svgIcon} alt={label} />
     ) : null;
-  }, [icon, svgIcon]);
+  }, [icon, svgIcon, label]);
 
   if (href) {
     return (
