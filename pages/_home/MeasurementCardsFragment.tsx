@@ -23,12 +23,19 @@ export const MeasurementCardsFragment = () => {
         <WrapperLeft>
           <H2>{translate("measurementCards.title")}</H2>
           <p>{translate("measurementCards.subtitle")}</p>
-          <ArrowLink label={translate("measurementCards.main")} />
+          <ArrowLink label={translate("measurementCards.main")} href="/" />
           <ArrowLink
             label={translate("measurementCards.materialRollerBlinds")}
+            href="/"
           />
-          <ArrowLink label={translate("measurementCards.romanianBlinds")} />
-          <ArrowLink label={translate("measurementCards.pleatedBlinds")} />
+          <ArrowLink
+            label={translate("measurementCards.romanianBlinds")}
+            href="/"
+          />
+          <ArrowLink
+            label={translate("measurementCards.pleatedBlinds")}
+            href="/"
+          />
         </WrapperLeft>
         <WrapperRight>
           <WrapperPhoto>
