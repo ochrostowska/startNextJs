@@ -24,18 +24,23 @@ export const InstallInstructionFragment = () => {
           <H2>{translate("installationInstructions.title")}</H2>
           <p>{translate("installationInstructions.subtitle")}</p>
           <ArrowLink
+            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
             label={translate("installationInstructions.miniRollerBlinds")}
           />
           <ArrowLink
+            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
             label={translate("installationInstructions.rollerBlinds")}
           />
           <ArrowLink
+            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
             label={translate("installationInstructions.romanianBlinds")}
           />
           <ArrowLink
+            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
             label={translate("installationInstructions.aluminiumBlinds")}
           />
           <ArrowLink
+            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
             label={translate("installationInstructions.verticalBlinds")}
           />
         </WrapperLeft>
