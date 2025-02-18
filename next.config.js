@@ -16,4 +16,8 @@ const nextConfig = {
   },
 };
 
+console.log("CONTENTFUL_SPACE_ID:", process.env.CONTENTFUL_SPACE_ID);
+console.log("SPACE:", process.env.NEXT_PUBLIC_SITE_URL);
+console.log("WINDOW", typeof window === "undefined");
+
 module.exports = nextConfig;
