@@ -43,6 +43,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column;
+    gap: 0rem;
+  }
 `;
 
 const TextContainer = styled.div`

@@ -64,6 +64,10 @@ const ContactWrapper = styled.div`
   justify-content: space-between;
   padding-top: 3rem;
   padding-bottom: 2rem;
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column;
+    gap: 3rem;
+  }
 `;
 
 const ContactPart = styled.div`

@@ -54,11 +54,19 @@ const HeroWrapper = styled.div`
   align-items: center;
   padding-bottom: 6rem;
   padding-top: 3rem;
+
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
 `;
 
 const HeroLeft = styled.div`
   flex: 1;
   padding-right: 7rem;
+  @media ${(props) => props.theme.media.phone} {
+    padding-right: 1rem;
+  }
 `;
 
 const HeroRight = styled.div`

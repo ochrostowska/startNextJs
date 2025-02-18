@@ -81,6 +81,12 @@ const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   position: relative;
+
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column;
+    gap: 4rem;
+    align-items: flex-start;
+  }
 `;
 
 const WrapperLeft = styled.div`
@@ -89,6 +95,9 @@ const WrapperLeft = styled.div`
   flex-direction: column;
   padding-right: 7em;
   gap: 2rem;
+  @media ${(props) => props.theme.media.phone} {
+    padding-right: 1em;
+  }
 `;
 
 const WrapperRight = styled.div`
@@ -96,6 +105,9 @@ const WrapperRight = styled.div`
   display: flex;
   justify-content: flex-end;
   position: relative;
+  @media ${(props) => props.theme.media.phone} {
+    display: none;
+  }
 `;
 
 const WrapperPhoto = styled.div`

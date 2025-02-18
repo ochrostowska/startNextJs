@@ -41,7 +41,7 @@ export const Photo = ({
       <Image
         alt={alt}
         style={{
-          width: "90%",
+          width: "92%",
           maxWidth: 1024,
           boxShadow: `${borderShadowDecor[decorLocation]} ${decorTint}`,
         }}

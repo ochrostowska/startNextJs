@@ -2,8 +2,14 @@
 import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
 import { NavBar } from "@/layout/navbar";
-import { getManufacturers } from "@/services/contentful/contentfulApi";
-import { Manufacturer } from "@/services/contentful/types";
+import {
+  getInstallationInstructions,
+  getManufacturers,
+} from "@/services/contentful/contentfulApi";
+import {
+  InstallationInstructions,
+  Manufacturer,
+} from "@/services/contentful/types";
 import { TranslationKeys, translate, useTranslate } from "@/translations";
 import fs from "fs/promises";
 import Head from "next/head";
@@ -23,6 +29,7 @@ import WelcomeFragment from "./_home/WelcomeFragment";
 type Props = {
   products: ProductsListSection[];
   manufacturers: Manufacturer[];
+  installationInstructions: InstallationInstructions[];
 };
 
 export default function Home(props: Props) {
@@ -46,7 +53,9 @@ export default function Home(props: Props) {
         <ProductsFragment productSections={props.products} />
         <ServicesFragment />
         <MeasurementCardsFragment />
-        <InstallInstructionFragment />
+        <InstallInstructionFragment
+          instructions={props.installationInstructions}
+        />
 
         <ManufacturersFragment manufacturers={props.manufacturers} />
         <GalleryFragment />
@@ -70,12 +79,14 @@ export async function getStaticProps() {
   });
 
   const manufacturers = await getManufacturers();
+  const installationInstructions = await getInstallationInstructions();
   console.log("getStaticProps manufacturers", manufacturers);
 
   return {
     props: {
       products: data,
       manufacturers,
+      installationInstructions,
     },
     revalidate: 60 * 60 * 24,
   };

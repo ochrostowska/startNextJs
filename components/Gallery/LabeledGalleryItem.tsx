@@ -41,7 +41,7 @@ const Label = styled.p`
   @media ${(props) => props.theme.media.tabPort} {
     font-size: 1.6rem;
   }
-  @media ${(props) => props.theme.media.mobile} {
+  @media ${(props) => props.theme.media.phone} {
     font-size: 2rem;
   }
 `;

@@ -149,6 +149,13 @@ const SingleServiceWrapper = styled.div`
       padding-top: 4rem;
     }
   }
+
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column;
+    gap: 0rem;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
 `;
 
 export default ServicesFragment;

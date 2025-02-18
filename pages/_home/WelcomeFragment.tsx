@@ -1,19 +1,12 @@
 import { Fragment } from "@/components/Fragment";
 import { H2 } from "@/components/Heading";
 import { Photo } from "@/components/Photo";
-import { useResponsiveValue } from "@/hooks/useResponsiveSize";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import styled from "styled-components";
 
 const WelcomeFragment = () => {
   const { translate } = useTranslate();
-
-  const badgeSize = useResponsiveValue(100, {
-    tabLand: 120,
-    desktop: 150,
-    bigDesktop: 200,
-  });
 
   return (
     <Fragment borderLeftColor={COLORS.secondaryLight} bigPadding>
@@ -44,6 +37,10 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column;
+    gap: 3rem;
+  }
 `;
 
 const WrapperLeft = styled.div`
@@ -64,6 +61,9 @@ const WrapperPhoto = styled.div`
   width: 90%;
   height: 90%;
   justify-content: flex-end;
+  @media ${(props) => props.theme.media.phone} {
+    width: 100%;
+  }
 `;
 
 const StyledPhoto = styled(Photo)`

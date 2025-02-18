@@ -3,13 +3,18 @@ import { Fragment } from "@/components/Fragment";
 import { H2 } from "@/components/Heading";
 import { Photo } from "@/components/Photo";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
+import { InstallationInstructions } from "@/services/contentful/types";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
+type Props = {
+  instructions: InstallationInstructions[];
+};
+
 export const INSTALL_INSTRUCTIONS_FRAGMENT_ID = "install-instructions-section";
-const InstallInstructionFragment = () => {
+const InstallInstructionFragment = ({ instructions = [] }: Props) => {
   const { translate } = useTranslate();
 
   const iconSize = useResponsiveValue(80, {
@@ -28,26 +33,13 @@ const InstallInstructionFragment = () => {
         <WrapperLeft>
           <H2>{translate("installationInstructions.title")}</H2>
           <p>{translate("installationInstructions.subtitle")}</p>
-          <ArrowLink
-            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
-            label={translate("installationInstructions.miniRollerBlinds")}
-          />
-          <ArrowLink
-            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
-            label={translate("installationInstructions.rollerBlinds")}
-          />
-          <ArrowLink
-            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
-            label={translate("installationInstructions.romanianBlinds")}
-          />
-          <ArrowLink
-            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
-            label={translate("installationInstructions.aluminiumBlinds")}
-          />
-          <ArrowLink
-            href="https://www.youtube.com/watch?v=qEplkZlAbdk"
-            label={translate("installationInstructions.verticalBlinds")}
-          />
+          {instructions.reverse().map((instruction) => (
+            <ArrowLink
+              key={instruction.nazwa}
+              href={instruction.url}
+              label={instruction.nazwa.toUpperCase()}
+            />
+          ))}
         </WrapperLeft>
         <WrapperRight>
           <WrapperPhoto>
@@ -98,6 +90,11 @@ const Wrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   position: relative;
+  @media ${(props) => props.theme.media.phone} {
+    flex-direction: column;
+    gap: 4rem;
+    align-items: flex-start;
+  }
 `;
 
 const WrapperLeft = styled.div`
@@ -106,6 +103,9 @@ const WrapperLeft = styled.div`
   flex-direction: column;
   padding-right: 7em;
   gap: 2rem;
+  @media ${(props) => props.theme.media.phone} {
+    padding-right: 1em;
+  }
 `;
 
 const WrapperRight = styled.div`
@@ -113,6 +113,9 @@ const WrapperRight = styled.div`
   display: flex;
   justify-content: flex-end;
   position: relative;
+  @media ${(props) => props.theme.media.phone} {
+    display: none;
+  }
 `;
 
 const WrapperPhoto = styled.div`
