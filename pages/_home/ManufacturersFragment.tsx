@@ -4,16 +4,18 @@ import { Fragment } from "@/components/Fragment";
 import { H2 } from "@/components/Heading";
 import { Spinner } from "@/components/Spinner";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
-import { useManufacturers } from "@/services/manufacturers/useManufacturers";
+import { Manufacturer } from "@/services/contentful/types";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
-const ManufacturersFragment = () => {
-  const { translate } = useTranslate();
+type Props = {
+  manufacturers: Manufacturer[];
+};
 
-  const { data, isLoading } = useManufacturers();
+const ManufacturersFragment = ({ manufacturers }: Props) => {
+  const { translate } = useTranslate();
 
   const logoWidth = useResponsiveValue(150, {
     tabLand: 250,
@@ -21,18 +23,14 @@ const ManufacturersFragment = () => {
     bigDesktop: 250,
   });
 
-  if (!isLoading && !data) {
-    return null;
-  }
-
   return (
     <Fragment borderLeftColor={COLORS.primary}>
       <Wrapper>
         <Title>{translate("manufacturers.title")}</Title>
         <Subtitle>{translate("manufacturers.subtitle")}</Subtitle>
-        {data ? (
+        {manufacturers.length ? (
           <LogosSection minsize={logoWidth}>
-            {data.map(({ nazwa, logoUrl, url }) => (
+            {manufacturers.map(({ nazwa, logoUrl, url }) => (
               <LogoAnchor key={nazwa} href={url} target="_blank">
                 <Image
                   alt={nazwa}
