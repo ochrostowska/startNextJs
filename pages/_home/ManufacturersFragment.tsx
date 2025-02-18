@@ -8,6 +8,7 @@ import { Manufacturer } from "@/services/contentful/types";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
+import Link from "next/link";
 import styled from "styled-components";
 
 type Props = {
@@ -33,7 +34,7 @@ const ManufacturersFragment = ({ manufacturers = [] }: Props) => {
         {manufacturers.length ? (
           <LogosSection minsize={logoWidth}>
             {manufacturers.map(({ nazwa, logoUrl, url }) => (
-              <LogoAnchor key={nazwa} href={url} target="_blank">
+              <LogoAnchor key={nazwa} href={url!!} target="_blank">
                 <Image
                   alt={nazwa}
                   src={logoUrl}
@@ -91,7 +92,7 @@ const LogosSection = styled.div<{ minsize: number }>`
   }
 `;
 
-const LogoAnchor = styled.a`
+const LogoAnchor = styled(Link)`
   :hover {
     transition: all 0.3s;
 

@@ -3,6 +3,7 @@ declare global {
     interface ProcessEnv {
       CONTENTFUL_SPACE_ID: string;
       CONTENTFUL_ACCESS_TOKEN: string;
+      GOOGLE_API_KEY: string;
     }
   }
 }

@@ -51,7 +51,6 @@ export default function Home(props: Props) {
         <ManufacturersFragment manufacturers={props.manufacturers} />
         <GalleryFragment />
         <ContactFragment />
-        <ContactFragment />
       </main>
       <Sznurex />
     </>
