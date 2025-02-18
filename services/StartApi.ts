@@ -1,9 +1,10 @@
+import { getManufacturers } from "./contentful/contentfulApi";
 import { Manufacturer } from "./contentful/types";
 
 export class StartApi {
   static async getManufacturers(): Promise<Manufacturer[]> {
     try {
-      return fetchJson<Manufacturer[]>("/manufacturers");
+      return getManufacturers();
     } catch (error) {
       console.error("StartApi Error:", error);
       return [];
