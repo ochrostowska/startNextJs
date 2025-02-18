@@ -8,7 +8,9 @@ type Props = {
 export const ArrowLink = ({ label, href }: Props) => {
   return (
     <Container>
-      <Link href={href}>&rarr; {label}</Link>
+      <Link href={href} target="_blank">
+        &rarr; {label}
+      </Link>
     </Container>
   );
 };
