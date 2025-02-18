@@ -764,6 +764,83 @@
           "en-US": false
         }
       }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "1iDbtlZwCCN0YFj88ZhABE",
+        "type": "Entry",
+        "createdAt": "2025-02-18T13:15:22.807Z",
+        "updatedAt": "2025-02-18T13:16:58.423Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-02-18T13:16:58.423Z",
+        "firstPublishedAt": "2025-02-18T13:16:58.423Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "instrukcjeMontazu"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/1iDbtlZwCCN0YFj88ZhABE"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Montaż rolet mini"
+        },
+        "url": {
+          "en-US": "https://www.youtube.com/watch?v=qEplkZlAbdk"
+        }
+      }
     }
   ],
   "assets": [

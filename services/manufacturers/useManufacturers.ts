@@ -1,5 +1,5 @@
 import { useQuery } from "react-query";
-import { getManufacturers } from "../contentful/contentfulApi";
+import { StartApi } from "../StartApi";
 
 export const useManufacturers = () =>
-  useQuery("manufacturers", getManufacturers);
+  useQuery("manufacturers", StartApi.getManufacturers);
