@@ -47,7 +47,9 @@ export default function Home(props: Props) {
         <ServicesFragment />
         <MeasurementCardsFragment />
         <InstallInstructionFragment />
-        <ManufacturersFragment manufacturers={props.manufacturers} />
+        {props.manufacturers && (
+          <ManufacturersFragment manufacturers={props.manufacturers} />
+        )}
         <GalleryFragment />
         <ContactFragment />
         <ContactFragment />

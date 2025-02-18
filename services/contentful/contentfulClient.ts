@@ -1,6 +1,14 @@
-import { createClient } from "contentful";
+import { createClient, EntrySkeletonType } from "contentful";
 
-export const contentfulClient = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
+const contentfulClient = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID!,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
 });
+
+export async function getContentfulEntries<T extends EntrySkeletonType>(
+  contentType: string
+) {
+  return contentfulClient.getEntries<T>({
+    content_type: contentType,
+  });
+}
