@@ -18,7 +18,7 @@ const GoogleMapComponent = ({ height, center }: Props) => {
       <GoogleMap
         mapContainerStyle={{ ...containerStyle, height }}
         center={center}
-        zoom={15}
+        zoom={18}
       >
         <Marker position={center} />
       </GoogleMap>

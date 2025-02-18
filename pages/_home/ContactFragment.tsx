@@ -17,8 +17,8 @@ const ContactFragment = () => {
   const addressLines = address.split(",");
 
   const center = {
-    lat: 53.4125571,
-    lng: 14.5235226,
+    lat: 53.4126946,
+    lng: 14.5243746,
   };
 
   return (
@@ -28,6 +28,7 @@ const ContactFragment = () => {
       bigPadding
     >
       <H2>{translate("contact.title")}</H2>
+
       <ContactWrapper>
         <Column>
           <ContactPart>
