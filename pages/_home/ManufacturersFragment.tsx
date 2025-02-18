@@ -1,3 +1,5 @@
+"use client";
+
 import { Fragment } from "@/components/Fragment";
 import { H2 } from "@/components/Heading";
 import { Spinner } from "@/components/Spinner";
@@ -11,13 +13,17 @@ import styled from "styled-components";
 const ManufacturersFragment = () => {
   const { translate } = useTranslate();
 
-  const { data } = useManufacturers();
+  const { data, isLoading } = useManufacturers();
 
   const logoWidth = useResponsiveValue(150, {
     tabLand: 250,
     desktop: 200,
     bigDesktop: 250,
   });
+
+  if (!isLoading && !data) {
+    return null;
+  }
 
   return (
     <Fragment borderLeftColor={COLORS.primary}>
@@ -26,10 +32,10 @@ const ManufacturersFragment = () => {
         <Subtitle>{translate("manufacturers.subtitle")}</Subtitle>
         {data ? (
           <LogosSection minsize={logoWidth}>
-            {data.map(({ name, logoUrl, siteUrl }) => (
-              <LogoAnchor key={name} href={siteUrl} target="_blank">
+            {data.map(({ nazwa, logoUrl, url }) => (
+              <LogoAnchor key={nazwa} href={url} target="_blank">
                 <Image
-                  alt={name}
+                  alt={nazwa}
                   src={logoUrl}
                   width={logoWidth}
                   height={logoWidth * 0.5}

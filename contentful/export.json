@@ -1,0 +1,903 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "dostawcy",
+        "type": "ContentType",
+        "createdAt": "2025-02-13T12:44:46.543Z",
+        "updatedAt": "2025-02-13T12:48:58.654Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-13T12:48:58.654Z",
+        "firstPublishedAt": "2025-02-13T12:44:47.026Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/content_types/dostawcy"
+      },
+      "displayField": "nazwa",
+      "name": "dostawcy",
+      "description": "Lista dostawców/producentów z adresami do ich stron i logo",
+      "fields": [
+        {
+          "id": "nazwa",
+          "name": "nazwa",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "url",
+          "name": "url",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "logoUrl",
+          "name": "logoUrl",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "priorytet",
+          "name": "priorytet",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "ukryj",
+          "name": "ukryj",
+          "type": "Boolean",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "defaultValue": {
+            "en-US": false
+          },
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "instrukcjeMontazu",
+        "type": "ContentType",
+        "createdAt": "2025-02-13T18:03:48.340Z",
+        "updatedAt": "2025-02-13T18:03:48.940Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2025-02-13T18:03:48.940Z",
+        "firstPublishedAt": "2025-02-13T18:03:48.940Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/content_types/instrukcjeMontazu"
+      },
+      "displayField": "nazwa",
+      "name": "instrukcjeMontazu",
+      "description": "Linki do filmików z instrukcjami montazu",
+      "fields": [
+        {
+          "id": "nazwa",
+          "name": "nazwa",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "url",
+          "name": "url",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "tags": [
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "59z7fiftx8m0",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 4,
+        "createdAt": "2025-02-13T12:44:47.157Z",
+        "createdBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-13T12:48:59.368Z",
+        "updatedBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "dostawcy",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "nazwa",
+          "settings": {
+            "helpText": "Nazwa dostawcy"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "url",
+          "settings": {
+            "helpText": "Adres strony internetowej dostawcy"
+          },
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "logoUrl",
+          "settings": {
+            "helpText": "URL do obrazka z logo dostawcy"
+          },
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "priorytet",
+          "settings": {
+            "helpText": "Opcjonalna wartość, im większy priorytet tym wyżej pokaże się dostawca na liście dostawców"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "ukryj",
+          "settings": {
+            "helpText": "Przestawienie tego pola na \"Yes\" spowoduje ukrycie danego dostawcy z listy",
+            "trueLabel": "Yes",
+            "falseLabel": "No"
+          },
+          "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "59z7fiftx8m0",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2025-02-13T18:03:49.079Z",
+        "createdBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-13T18:03:49.808Z",
+        "updatedBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "instrukcjeMontazu",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "nazwa",
+          "settings": {
+            "helpText": "Tekst pod jakim będzie się wyświetlał link do instrukcji"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "url",
+          "settings": {
+            "helpText": "Link do instrukcji wideo"
+          },
+          "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "UIGVIm3sofjkJdfSLKjcb",
+        "type": "Entry",
+        "createdAt": "2025-02-13T12:49:07.245Z",
+        "updatedAt": "2025-02-13T12:50:08.195Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-02-13T12:50:08.195Z",
+        "firstPublishedAt": "2025-02-13T12:50:08.195Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "dostawcy"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/UIGVIm3sofjkJdfSLKjcb"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Anwis"
+        },
+        "url": {
+          "en-US": "https://anwis.pl/"
+        },
+        "logoUrl": {
+          "en-US": "https://airokna.pl/wp-content/uploads/2023/02/logo_anwis_poziome.jpg"
+        },
+        "ukryj": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "4hfRsUWD60dxItsncvgS3N",
+        "type": "Entry",
+        "createdAt": "2025-02-13T18:04:12.907Z",
+        "updatedAt": "2025-02-13T18:05:24.332Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-02-13T18:05:24.332Z",
+        "firstPublishedAt": "2025-02-13T18:05:24.332Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "dostawcy"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/4hfRsUWD60dxItsncvgS3N"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Deco-Sun"
+        },
+        "url": {
+          "en-US": "https://www.deco-sun.pl/"
+        },
+        "logoUrl": {
+          "en-US": "https://mojstyl.eu/wp-content/uploads/2020/02/Deco-Sun-Logo-DU%C5%BBE.jpg"
+        },
+        "ukryj": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "7gHJZ8rqALJD5szCPODja2",
+        "type": "Entry",
+        "createdAt": "2025-02-13T18:05:33.560Z",
+        "updatedAt": "2025-02-13T18:06:03.885Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-02-13T18:06:03.885Z",
+        "firstPublishedAt": "2025-02-13T18:06:03.885Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "dostawcy"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/7gHJZ8rqALJD5szCPODja2"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Fakro"
+        },
+        "url": {
+          "en-US": "https://www.fakro.pl/"
+        },
+        "logoUrl": {
+          "en-US": "https://mdach-centrum.pl/wp-content/uploads/2019/05/fakro.jpg"
+        },
+        "ukryj": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "524SO4I9uiTpSTSmO1hS0S",
+        "type": "Entry",
+        "createdAt": "2025-02-13T18:06:12.160Z",
+        "updatedAt": "2025-02-13T18:07:08.015Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-02-13T18:07:08.015Z",
+        "firstPublishedAt": "2025-02-13T18:07:08.015Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "dostawcy"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/524SO4I9uiTpSTSmO1hS0S"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Tapparella"
+        },
+        "url": {
+          "en-US": "https://tapparella.pl/"
+        },
+        "logoUrl": {
+          "en-US": "https://tapparella.pl/wp-content/webp-express/webp-images/uploads/2020/12/Tapparella-samo-logo-NEW.png.webp"
+        },
+        "ukryj": {
+          "en-US": false
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "1Xi6B9u4NTXXKgTfdZbLxd",
+        "type": "Entry",
+        "createdAt": "2025-02-13T18:07:31.228Z",
+        "updatedAt": "2025-02-13T18:07:55.627Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-13T18:07:55.627Z",
+        "firstPublishedAt": "2025-02-13T18:07:55.627Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "dostawcy"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/1Xi6B9u4NTXXKgTfdZbLxd"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Velux"
+        },
+        "url": {
+          "en-US": "https://www.velux.pl/"
+        },
+        "logoUrl": {
+          "en-US": "https://vectorlogoseek.com/wp-content/uploads/2018/11/velux-group-vector-logo.png"
+        },
+        "ukryj": {
+          "en-US": false
+        }
+      }
+    }
+  ],
+  "assets": [
+  ],
+  "locales": [
+    {
+      "name": "English (United States)",
+      "code": "en-US",
+      "fallbackCode": null,
+      "default": true,
+      "contentManagementApi": true,
+      "contentDeliveryApi": true,
+      "optional": false,
+      "sys": {
+        "type": "Locale",
+        "id": "2vn7SiuQUkWW1vxRqSqD2F",
+        "version": 1,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "environment": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Environment",
+            "id": "master",
+            "uuid": "74dfd4bb-f942-40aa-bc86-592174b0643d"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "createdAt": "2025-02-13T12:38:16Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedAt": "2025-02-13T12:38:16Z"
+      }
+    }
+  ],
+  "webhooks": [
+  ],
+  "roles": [
+    {
+      "name": "Editor",
+      "description": "Allows editing, publishing and archiving of content",
+      "policies": [
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Entry"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "effect": "allow",
+          "actions": "all",
+          "constraint": {
+            "and": [
+              {
+                "equals": [
+                  {
+                    "doc": "sys.type"
+                  },
+                  "Asset"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "permissions": {
+        "ContentModel": [
+          "read"
+        ],
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
+      },
+      "sys": {
+        "type": "Role",
+        "id": "2vU6TzaDzA22NOI2xlYUHT",
+        "version": 0,
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "createdAt": "2025-02-13T12:38:17Z",
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedAt": "2025-02-13T12:38:17Z"
+      }
+    }
+  ]
+}

@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "cf-export": "contentful space export --config contentful/export-config.json --space-id 59z7fiftx8m0",
+    "cf-generate-types": "cf-content-types-generator contentful/export.json --out types/contentful --v10"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -22,6 +24,7 @@
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
     "babel-plugin-macros": "^3.1.0",
+    "contentful": "^11.4.6",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.17",
     "firebase": "^10.5.0",
@@ -46,6 +49,8 @@
     "@storybook/react": "^7.3.1",
     "@storybook/testing-library": "^0.2.0",
     "babel-plugin-styled-components": "^2.1.4",
+    "cf-content-types-generator": "^2.15.5",
+    "contentful-cli": "^3.7.3",
     "eslint-plugin-storybook": "^0.6.13",
     "storybook": "^7.3.1"
   }
