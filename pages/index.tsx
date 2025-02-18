@@ -2,8 +2,8 @@
 import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
 import { NavBar } from "@/layout/navbar";
+import { getManufacturers } from "@/services/contentful/contentfulApi";
 import { Manufacturer } from "@/services/contentful/types";
-import { StartApi } from "@/services/StartApi";
 import { TranslationKeys, translate, useTranslate } from "@/translations";
 import fs from "fs/promises";
 import Head from "next/head";
@@ -47,9 +47,8 @@ export default function Home(props: Props) {
         <ServicesFragment />
         <MeasurementCardsFragment />
         <InstallInstructionFragment />
-        {props.manufacturers && (
-          <ManufacturersFragment manufacturers={props.manufacturers} />
-        )}
+
+        <ManufacturersFragment manufacturers={props.manufacturers} />
         <GalleryFragment />
         <ContactFragment />
         <ContactFragment />
@@ -71,12 +70,14 @@ export async function getStaticProps() {
     });
   });
 
-  const manufacturers = await StartApi.getManufacturers();
+  const manufacturers = await getManufacturers();
+  console.log("getStaticProps manufacturers", manufacturers);
 
   return {
     props: {
       products: data,
       manufacturers,
     },
+    revalidate: 60 * 60 * 24,
   };
 }

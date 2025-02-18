@@ -14,7 +14,7 @@ type Props = {
   manufacturers: Manufacturer[];
 };
 
-const ManufacturersFragment = ({ manufacturers }: Props) => {
+const ManufacturersFragment = ({ manufacturers = [] }: Props) => {
   const { translate } = useTranslate();
 
   const logoWidth = useResponsiveValue(150, {
