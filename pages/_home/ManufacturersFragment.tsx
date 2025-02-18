@@ -14,6 +14,8 @@ type Props = {
   manufacturers: Manufacturer[];
 };
 
+export const MANUFACTURERS_FRAGMENT_ID = "manufacturers-section";
+
 const ManufacturersFragment = ({ manufacturers = [] }: Props) => {
   const { translate } = useTranslate();
 
@@ -24,7 +26,7 @@ const ManufacturersFragment = ({ manufacturers = [] }: Props) => {
   });
 
   return (
-    <Fragment borderLeftColor={COLORS.primary}>
+    <Fragment id={MANUFACTURERS_FRAGMENT_ID} borderLeftColor={COLORS.primary}>
       <Wrapper>
         <Title>{translate("manufacturers.title")}</Title>
         <Subtitle>{translate("manufacturers.subtitle")}</Subtitle>

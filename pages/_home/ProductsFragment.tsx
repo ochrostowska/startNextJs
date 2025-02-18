@@ -10,6 +10,8 @@ type Props = {
   productSections: ProductsListSection[];
 };
 
+export const PRODUCTS_FRAGMENT_ID = "products-section";
+
 const ProductsFragment = ({ productSections }: Props) => {
   const { translate } = useTranslate();
 
@@ -20,9 +22,12 @@ const ProductsFragment = ({ productSections }: Props) => {
   });
 
   return (
-    <Fragment bigPadding={true} backgroundColor={COLORS.primaryLight}>
+    <Fragment
+      id={PRODUCTS_FRAGMENT_ID}
+      backgroundColor={COLORS.primaryLight}
+      bigPadding
+    >
       <H2>{translate("ourOffer")}</H2>
-
       <ProductsList sections={productSections} />
     </Fragment>
   );

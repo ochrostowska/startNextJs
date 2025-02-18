@@ -2,9 +2,11 @@ import { Button } from "@/components/Button";
 import { Fragment } from "@/components/Fragment";
 import { H1, H4 } from "@/components/Heading";
 import { Photo } from "@/components/Photo";
+import { scrollToElement } from "@/helpers/scrollToElement";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import styled from "styled-components";
+import { MEASUREMENT_CARDS_FRAGMENT_ID } from "./MeasurementCardsFragment";
 
 const photoSize = 1000;
 
@@ -24,7 +26,11 @@ const Hero = () => {
             {titleParts[2]}
           </H1>
           <H4>{translate("heroSubtitle")}</H4>
-          <Button label={translate("heroButton")} icon="eye" href="#" />
+          <Button
+            label={translate("heroButton")}
+            icon="eye"
+            onClick={() => scrollToElement(MEASUREMENT_CARDS_FRAGMENT_ID)}
+          />
         </HeroLeft>
         <HeroRight>
           <HeroImage

@@ -1,10 +1,13 @@
 import { Button, isValidButtonIcon } from "@/components/Button";
 import { Fragment } from "@/components/Fragment";
 import { H2, H3 } from "@/components/Heading";
+import { scrollToElement } from "@/helpers/scrollToElement";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
+import { INSTALL_INSTRUCTIONS_FRAGMENT_ID } from "./InstallInstructionsFragment";
+import { MEASUREMENT_CARDS_FRAGMENT_ID } from "./MeasurementCardsFragment";
 const ServicesFragment = () => {
   const { translate } = useTranslate();
 
@@ -17,7 +20,7 @@ const ServicesFragment = () => {
       ],
       buttonIcon: "ruler",
       buttonLabel: translate("services.measurements.button"),
-      buttonHref: "/",
+      buttonSectionId: MEASUREMENT_CARDS_FRAGMENT_ID,
       imageSrc: "/icons/measurements-icon.svg",
     },
     {
@@ -28,7 +31,7 @@ const ServicesFragment = () => {
       ],
       buttonIcon: "installation",
       buttonLabel: translate("services.installation.button"),
-      buttonHref: "/",
+      buttonSectionId: INSTALL_INSTRUCTIONS_FRAGMENT_ID,
       imageSrc: "/icons/drill-simple-icon.svg",
     },
   ];
@@ -49,7 +52,7 @@ type SingleServiceProps = {
   description: string[];
   buttonIcon: string;
   buttonLabel: string;
-  buttonHref: string;
+  buttonSectionId: string;
   imageSrc: string;
 };
 
@@ -58,7 +61,7 @@ const SingleService = ({
   description,
   buttonIcon,
   buttonLabel,
-  buttonHref,
+  buttonSectionId,
   imageSrc,
 }: SingleServiceProps) => {
   const imageSize = useResponsiveValue(150, {
@@ -98,7 +101,7 @@ const SingleService = ({
           <ServiceButton>
             <Button
               label={buttonLabel}
-              href={buttonHref}
+              onClick={() => scrollToElement(buttonSectionId)}
               icon={isValidButtonIcon(buttonIcon) ? buttonIcon : undefined}
             />
           </ServiceButton>

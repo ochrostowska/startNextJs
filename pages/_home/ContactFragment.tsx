@@ -6,6 +6,8 @@ import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import styled from "styled-components";
 
+export const CONTACT_FRAGMENT_ID = "contact-section";
+
 const ContactFragment = () => {
   const { translate } = useTranslate();
 
@@ -27,7 +29,11 @@ const ContactFragment = () => {
   });
 
   return (
-    <Fragment borderLeftColor={COLORS.tertiaryLight} bigPadding>
+    <Fragment
+      id={CONTACT_FRAGMENT_ID}
+      borderLeftColor={COLORS.tertiaryLight}
+      bigPadding
+    >
       <H2>{translate("contact.title")}</H2>
 
       <div

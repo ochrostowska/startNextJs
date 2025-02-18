@@ -8,6 +8,7 @@ import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
+export const INSTALL_INSTRUCTIONS_FRAGMENT_ID = "install-instructions-section";
 const InstallInstructionFragment = () => {
   const { translate } = useTranslate();
 
@@ -18,7 +19,11 @@ const InstallInstructionFragment = () => {
   });
 
   return (
-    <Fragment borderLeftColor={COLORS.secondaryLight} bigPadding>
+    <Fragment
+      id={INSTALL_INSTRUCTIONS_FRAGMENT_ID}
+      borderLeftColor={COLORS.secondaryLight}
+      bigPadding
+    >
       <Wrapper>
         <WrapperLeft>
           <H2>{translate("installationInstructions.title")}</H2>

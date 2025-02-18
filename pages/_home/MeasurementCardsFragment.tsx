@@ -8,6 +8,8 @@ import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 
+export const MEASUREMENT_CARDS_FRAGMENT_ID = "measurements-cards";
+
 const MeasurementCardsFragment = () => {
   const { translate } = useTranslate();
 
@@ -18,7 +20,11 @@ const MeasurementCardsFragment = () => {
   });
 
   return (
-    <Fragment borderLeftColor={COLORS.secondaryLight} bigPadding>
+    <Fragment
+      id={MEASUREMENT_CARDS_FRAGMENT_ID}
+      borderLeftColor={COLORS.secondaryLight}
+      bigPadding
+    >
       <Wrapper>
         <WrapperLeft>
           <H2>{translate("measurementCards.title")}</H2>
