@@ -3,13 +3,18 @@ import { Fragment } from "@/components/Fragment";
 import { H2, H3 } from "@/components/Heading";
 import { scrollToElement } from "@/helpers/scrollToElement";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
+import useResponsiveSizeBreakpoint from "@/hooks/useResponsiveSizeBreakpoint";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
 import { INSTALL_INSTRUCTIONS_FRAGMENT_ID } from "./InstallInstructionsFragment";
 import { MEASUREMENT_CARDS_FRAGMENT_ID } from "./MeasurementCardsFragment";
+
 const ServicesFragment = () => {
   const { translate } = useTranslate();
+
+  const size = useResponsiveSizeBreakpoint();
+  const isMobile = size === "phone";
 
   const services: SingleServiceProps[] = [
     {
@@ -20,7 +25,8 @@ const ServicesFragment = () => {
       ],
       buttonIcon: "ruler",
       buttonLabel: translate("services.measurements.button"),
-      buttonSectionId: MEASUREMENT_CARDS_FRAGMENT_ID,
+      buttonSectionId: isMobile ? undefined : MEASUREMENT_CARDS_FRAGMENT_ID,
+      href: isMobile ? "/do-pobrania" : undefined,
       imageSrc: "/icons/measurements-icon.svg",
     },
     {
@@ -31,7 +37,8 @@ const ServicesFragment = () => {
       ],
       buttonIcon: "installation",
       buttonLabel: translate("services.installation.button"),
-      buttonSectionId: INSTALL_INSTRUCTIONS_FRAGMENT_ID,
+      buttonSectionId: isMobile ? undefined : INSTALL_INSTRUCTIONS_FRAGMENT_ID,
+      href: isMobile ? "/do-pobrania" : undefined,
       imageSrc: "/icons/drill-simple-icon.svg",
     },
   ];
@@ -52,8 +59,9 @@ type SingleServiceProps = {
   description: string[];
   buttonIcon: string;
   buttonLabel: string;
-  buttonSectionId: string;
+  buttonSectionId?: string;
   imageSrc: string;
+  href?: string;
 };
 
 const SingleService = ({
@@ -63,6 +71,7 @@ const SingleService = ({
   buttonLabel,
   buttonSectionId,
   imageSrc,
+  href,
 }: SingleServiceProps) => {
   const imageSize = useResponsiveValue(150, {
     tabLand: 180,
@@ -101,20 +110,20 @@ const SingleService = ({
           <ServiceButton>
             <Button
               label={buttonLabel}
-              onClick={() => scrollToElement(buttonSectionId)}
+              onClick={
+                buttonSectionId
+                  ? () => scrollToElement(buttonSectionId)
+                  : undefined
+              }
+              href={href}
               icon={isValidButtonIcon(buttonIcon) ? buttonIcon : undefined}
             />
           </ServiceButton>
         </div>
       </SingleServiceWrapper>
-      <SePar />
     </>
   );
 };
-
-const SePar = styled.div`
-  height: 3rem;
-`;
 
 const ServiceParagraph = styled.p`
   margin-bottom: 1rem;

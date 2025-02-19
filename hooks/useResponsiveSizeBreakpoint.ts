@@ -49,4 +49,9 @@ const useResponsiveSizeBreakpoint = (): ResponsiveBreakPointKey => {
   return size;
 };
 
+export const useIsMobile = () => {
+  const size = useResponsiveSizeBreakpoint();
+  return size === "phone";
+};
+
 export default useResponsiveSizeBreakpoint;

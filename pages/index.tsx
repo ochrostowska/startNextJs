@@ -1,6 +1,7 @@
 // import { Buttonex } from "@/stories/Buttonex";
 import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
+import { useIsMobile } from "@/hooks/useResponsiveSizeBreakpoint";
 import { NavBar } from "@/layout/navbar";
 import {
   getInstallationInstructions,
@@ -10,7 +11,7 @@ import {
   InstallationInstructions,
   Manufacturer,
 } from "@/services/contentful/types";
-import { TranslationKeys, translate, useTranslate } from "@/translations";
+import { TranslationKeys, translate } from "@/translations";
 import fs from "fs/promises";
 import Head from "next/head";
 import path from "path";
@@ -33,7 +34,7 @@ type Props = {
 };
 
 export default function Home(props: Props) {
-  const { translate } = useTranslate();
+  const isMobile = useIsMobile();
 
   // const all = [useManufacturers();]
   // console.log("all", all);
@@ -52,9 +53,10 @@ export default function Home(props: Props) {
         <WelcomeFragment />
         <ProductsFragment productSections={props.products} />
         <ServicesFragment />
-        <MeasurementCardsFragment />
+        <MeasurementCardsFragment hidePhoto={isMobile} />
         <InstallInstructionFragment
           instructions={props.installationInstructions}
+          hidePhoto={isMobile}
         />
 
         <ManufacturersFragment manufacturers={props.manufacturers} />

@@ -6,7 +6,7 @@ import { scrollToElement } from "@/helpers/scrollToElement";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import styled from "styled-components";
-import { MEASUREMENT_CARDS_FRAGMENT_ID } from "./MeasurementCardsFragment";
+import { CONTACT_FRAGMENT_ID } from "./ContactFragment";
 
 const photoSize = 1000;
 
@@ -29,7 +29,7 @@ const Hero = () => {
           <Button
             label={translate("heroButton")}
             icon="eye"
-            onClick={() => scrollToElement(MEASUREMENT_CARDS_FRAGMENT_ID)}
+            onClick={() => scrollToElement(CONTACT_FRAGMENT_ID)}
           />
         </HeroLeft>
         <HeroRight>
@@ -58,6 +58,7 @@ const HeroWrapper = styled.div`
   @media ${(props) => props.theme.media.phone} {
     flex-direction: column-reverse;
     gap: 3rem;
+    padding-top: 1rem;
   }
 `;
 

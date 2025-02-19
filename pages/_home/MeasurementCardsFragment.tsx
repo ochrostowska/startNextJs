@@ -10,7 +10,11 @@ import styled from "styled-components";
 
 export const MEASUREMENT_CARDS_FRAGMENT_ID = "measurements-cards";
 
-const MeasurementCardsFragment = () => {
+type Props = {
+  hidePhoto?: boolean;
+};
+
+const MeasurementCardsFragment = ({ hidePhoto = false }: Props) => {
   const { translate } = useTranslate();
 
   const iconHeight = useResponsiveValue(60, {
@@ -43,27 +47,31 @@ const MeasurementCardsFragment = () => {
             href="/"
           />
         </WrapperLeft>
-        <WrapperRight>
-          <WrapperPhoto>
-            <StyledPhoto
-              src={"/photos/cat_measure.png"}
-              alt={translate("measurementCards.title")}
-              height={900}
-              width={900}
-              decorTint={COLORS.secondaryLight}
-              decorLocation="top-right"
-            />
-          </WrapperPhoto>
+        {!hidePhoto && (
+          <WrapperRight>
+            <WrapperPhoto>
+              <StyledPhoto
+                src={"/photos/cat_measure.png"}
+                alt={translate("measurementCards.title")}
+                height={900}
+                width={900}
+                decorTint={COLORS.secondaryLight}
+                decorLocation="top-right"
+              />
+            </WrapperPhoto>
 
-          <IconWrapper style={{ position: "absolute", bottom: -20, left: "0" }}>
-            <Image
-              src={"/products/miarka.svg"}
-              alt={translate("measurementCards.title")}
-              height={iconHeight}
-              width={iconHeight * 1.5}
-            />
-          </IconWrapper>
-        </WrapperRight>
+            <IconWrapper
+              style={{ position: "absolute", bottom: -20, left: "0" }}
+            >
+              <Image
+                src={"/products/miarka.svg"}
+                alt={translate("measurementCards.title")}
+                height={iconHeight}
+                width={iconHeight * 1.5}
+              />
+            </IconWrapper>
+          </WrapperRight>
+        )}
       </Wrapper>
     </Fragment>
   );
@@ -105,9 +113,6 @@ const WrapperRight = styled.div`
   display: flex;
   justify-content: flex-end;
   position: relative;
-  @media ${(props) => props.theme.media.phone} {
-    display: none;
-  }
 `;
 
 const WrapperPhoto = styled.div`

@@ -111,6 +111,12 @@ const ButtonBase = css<ButtonBaseProps>`
     padding: 1.1rem 2.2rem;
   }
 
+  @media ${(props) => props.theme.media.phone} {
+    font-size: 1.4rem;
+    padding: 1.1rem 2.2rem;
+    letter-spacing: 0.3rem;
+  }
+
   &:hover {
     box-shadow: ${boxShadowHover} ${(props) => props.theme.colors.primary};
   }

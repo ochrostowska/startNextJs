@@ -88,4 +88,9 @@
       border-left: 2px dashed $color-grey-light-2;
     }
   }
+
+  @include respond(phone) {
+    margin-left: $fragment-horizontal-offset-phone;
+    margin-right: $fragment-horizontal-offset-phone;
+  }
 }

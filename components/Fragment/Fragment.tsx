@@ -55,9 +55,9 @@ export const StyledFragment = styled.div<Props>`
   }
 
   @media ${(props) => props.theme.media.phone} {
-    padding-top: ${(props) => (props.bigPadding ? "6rem" : "2rem")};
-    padding-bottom: ${(props) => (props.bigPadding ? "6rem" : "2rem")};
-    padding-left: 4rem;
-    padding-right: 4rem;
+    padding-top: ${(props) => (props.bigPadding ? "4rem" : "2rem")};
+    padding-bottom: ${(props) => (props.bigPadding ? "4rem" : "2rem")};
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 `;

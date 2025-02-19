@@ -27,6 +27,11 @@ const H1Styles = css`
     font-size: 4rem;
   }
 
+  @media ${(props) => props.theme.media.phone} {
+    font-size: 3rem;
+    line-height: 130%;
+  }
+
   @media ${(props) => props.theme.media.bigDesktop} {
     font-size: 6.2rem;
   }
@@ -43,6 +48,7 @@ const H2Styles = css`
 
   @media ${(props) => props.theme.media.tabPort} {
     font-size: 2.6rem;
+    line-height: 130%;
   }
 `;
 
@@ -77,8 +83,6 @@ const H5Styles = css`
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.6rem;
-  line-height: 1.8rem;
-
   @media ${(props) => props.theme.media.tabLand} {
     font-size: 1.6rem;
   }
@@ -117,6 +121,10 @@ export const H4 = styled.h4`
 
 export const H5 = styled.h5`
   ${H5Styles}
+`;
+
+export const CenteredP = styled.p`
+  text-align: center;
 `;
 
 type Props = {

@@ -20,8 +20,9 @@ export const MANUFACTURERS_FRAGMENT_ID = "manufacturers-section";
 const ManufacturersFragment = ({ manufacturers = [] }: Props) => {
   const { translate } = useTranslate();
 
-  const logoWidth = useResponsiveValue(150, {
-    tabLand: 250,
+  const logoWidth = useResponsiveValue(140, {
+    tabPort: 180,
+    tabLand: 220,
     desktop: 200,
     bigDesktop: 250,
   });
@@ -63,11 +64,6 @@ const Wrapper = styled.div`
   gap: 2rem;
   margin-left: 0rem;
   margin-right: 0rem;
-
-  @media ${(props) => props.theme.media.desktop} {
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
 `;
 
 const Title = styled(H2)`

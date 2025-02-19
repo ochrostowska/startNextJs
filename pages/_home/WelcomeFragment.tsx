@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 const WelcomeFragment = () => {
   const { translate } = useTranslate();
-
   return (
     <Fragment borderLeftColor={COLORS.secondaryLight} bigPadding>
       <Wrapper>
@@ -49,6 +48,9 @@ const WrapperLeft = styled.div`
   flex-direction: column;
   padding-right: 7em;
   gap: 2rem;
+  @media ${(props) => props.theme.media.phone} {
+    padding-right: 1rem;
+  }
 `;
 
 const WrapperRight = styled.div`

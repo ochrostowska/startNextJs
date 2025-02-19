@@ -11,10 +11,14 @@ import styled from "styled-components";
 
 type Props = {
   instructions: InstallationInstructions[];
+  hidePhoto?: boolean;
 };
 
 export const INSTALL_INSTRUCTIONS_FRAGMENT_ID = "install-instructions-section";
-const InstallInstructionFragment = ({ instructions = [] }: Props) => {
+const InstallInstructionFragment = ({
+  instructions = [],
+  hidePhoto = false,
+}: Props) => {
   const { translate } = useTranslate();
 
   const iconSize = useResponsiveValue(80, {
@@ -41,32 +45,34 @@ const InstallInstructionFragment = ({ instructions = [] }: Props) => {
             />
           ))}
         </WrapperLeft>
-        <WrapperRight>
-          <WrapperPhoto>
-            <StyledPhoto
-              src={"/photos/photo_install.png"}
-              alt={translate("measurementCards.title")}
-              height={900}
-              width={900}
-              decorTint={COLORS.secondaryLight}
-              decorLocation="bottom-right"
-            />
-          </WrapperPhoto>
+        {!hidePhoto && (
+          <WrapperRight>
+            <WrapperPhoto>
+              <StyledPhoto
+                src={"/photos/photo_install.png"}
+                alt={translate("measurementCards.title")}
+                height={900}
+                width={900}
+                decorTint={COLORS.secondaryLight}
+                decorLocation="bottom-right"
+              />
+            </WrapperPhoto>
 
-          <IconWrapper
-            style={{
-              width: iconSize,
-              height: iconSize,
-            }}
-          >
-            <Image
-              src={"/icons/drill-icon.svg"}
-              alt={translate("measurementCards.title")}
-              height={iconSize * 0.7}
-              width={iconSize * 0.7}
-            />
-          </IconWrapper>
-        </WrapperRight>
+            <IconWrapper
+              style={{
+                width: iconSize,
+                height: iconSize,
+              }}
+            >
+              <Image
+                src={"/icons/drill-icon.svg"}
+                alt={translate("measurementCards.title")}
+                height={iconSize * 0.7}
+                width={iconSize * 0.7}
+              />
+            </IconWrapper>
+          </WrapperRight>
+        )}
       </Wrapper>
     </Fragment>
   );
@@ -113,9 +119,6 @@ const WrapperRight = styled.div`
   display: flex;
   justify-content: flex-end;
   position: relative;
-  @media ${(props) => props.theme.media.phone} {
-    display: none;
-  }
 `;
 
 const WrapperPhoto = styled.div`

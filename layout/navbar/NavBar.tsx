@@ -15,7 +15,7 @@ export const NavBar = () => {
       <div className={styles.navigation__logoBox}>
         <Image
           className={styles.navigation__logo}
-          src={"/startlogo.png"}
+          src={"/logo.png"}
           alt="Logo"
           width={243}
           height={100}

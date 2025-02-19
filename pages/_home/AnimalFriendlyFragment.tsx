@@ -9,7 +9,7 @@ import styled from "styled-components";
 const AnimalFriendlyFragment = () => {
   const { translate } = useTranslate();
 
-  const badgeSize = useResponsiveValue(100, {
+  const badgeSize = useResponsiveValue(90, {
     tabLand: 120,
     desktop: 150,
     bigDesktop: 200,
@@ -23,13 +23,13 @@ const AnimalFriendlyFragment = () => {
     >
       <Wrapper>
         <Image
-          src={"/photos/animalFriendlyBadge2.png"}
+          src={"/photos/animalFriendlyBadge3.png"}
           alt="Animal friendly badge"
           height={badgeSize}
           width={badgeSize}
         />
         <TextContainer>
-          <p>{translate("animalFriendlyText1")}</p>
+          <CenteredP>{translate("animalFriendlyText1")}</CenteredP>
           <H5>{translate("animalFriendlyText2")}</H5>
         </TextContainer>
       </Wrapper>
@@ -42,18 +42,19 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   @media ${(props) => props.theme.media.phone} {
-    flex-direction: column;
-    gap: 0rem;
+    gap: 1rem;
   }
 `;
 
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   align-items: center;
 `;
 
+const CenteredP = styled.p`
+  text-align: center;
+`;
 export default AnimalFriendlyFragment;
