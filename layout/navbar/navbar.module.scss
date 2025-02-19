@@ -12,15 +12,6 @@
   margin-right: $fragment-horizontal-offset;
   margin-top: $fragment-vertical-offset;
 
-  &__logoBox {
-    width: 13rem;
-  }
-
-  &__logo {
-    width: 100%;
-    height: 100%;
-  }
-
   &__list {
     ul {
       display: flex;

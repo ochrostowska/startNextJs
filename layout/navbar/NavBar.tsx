@@ -1,6 +1,8 @@
 import { HamburgerSvg } from "@/components/Svg";
-import Image from "next/image";
+import { scrollToElement } from "@/helpers/scrollToElement";
+import { PRODUCTS_FRAGMENT_ID } from "@/pages/_home/ProductsFragment";
 import { useState } from "react";
+import { Logo } from "../Logo";
 import styles from "./navbar.module.scss";
 
 export const NavBar = () => {
@@ -12,15 +14,7 @@ export const NavBar = () => {
 
   return (
     <nav className={styles.navigation}>
-      <div className={styles.navigation__logoBox}>
-        <Image
-          className={styles.navigation__logo}
-          src={"/logo.png"}
-          alt="Logo"
-          width={243}
-          height={100}
-        />
-      </div>
+      <Logo />
 
       <div className={styles.navigation__menu} onClick={handleShowNavbar}>
         <HamburgerSvg />
@@ -33,9 +27,12 @@ export const NavBar = () => {
       >
         <ul>
           <li className={styles.navigation__item}>
-            <a href="#" className={styles.navigation__link}>
+            <button
+              onClick={() => scrollToElement(PRODUCTS_FRAGMENT_ID)}
+              className={styles.navigation__link}
+            >
               Oferta
-            </a>
+            </button>
           </li>
           <li className="navigation__item">
             <a href="#" className={styles.navigation__link}>

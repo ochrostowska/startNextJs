@@ -1,78 +1,78 @@
 [
   {
     "title": "product.rollerBlinds",
-    "titleHref": "/prod/rolety",
+    "titleHref": "/produkty/rolety",
     "items": [
       {
         "icon": "/products/materialowa.svg",
         "label": "product.materialBlinds",
-        "href": "/prod/rolety/materialowe",
+        "href": "/produkty/rolety/materialowe",
         "alt": "Roleta materiałowa"
       },
       {
         "icon": "/products/dziennoc.svg",
         "label": "product.dayNightBlinds",
-        "href": "/prod/rolety/dziennoc",
+        "href": "/produkty/rolety/dziennoc",
         "alt": "Roleta dzień-noc"
       },
       {
         "icon": "/products/plisa.svg",
         "label": "product.pleatedBlinds",
-        "href": "/prod/rolety/plisy",
+        "href": "/produkty/rolety/plisy",
         "alt": "Roleta plisowana"
       },
       {
         "icon": "/products/rzymska.svg",
         "label": "product.romanianBlinds",
-        "href": "/prod/rolety/rzymskie",
+        "href": "/produkty/rolety/rzymskie",
         "alt": "Roleta rzymska"
       },
       {
         "icon": "/products/dachowa.svg",
         "label": "product.roofBlinds",
-        "href": "/prod/rolety/dachowa",
+        "href": "/produkty/rolety/dachowa",
         "alt": "Roleta dachowa"
       },
       {
         "icon": "/products/roletascreen.svg",
         "label": "product.screenRollerBlind",
-        "href": "/prod/rolety/screen",
+        "href": "/produkty/rolety/screen",
         "alt": "Roleta screen"
       }
     ]
   },
   {
     "title": "product.horizontalBlinds",
-    "titleHref": "/prod/zaluzje",
+    "titleHref": "/produkty/zaluzje",
     "items": [
       {
         "icon": "/products/aluminiowa.svg",
         "label": "product.aluminiumBlinds",
-        "href": "/prod/zaluzje/aluminiowe",
+        "href": "/produkty/zaluzje/aluminiowe",
         "alt": "Żaluzja aluminiowa"
       },
       {
         "icon": "/products/drewniana.svg",
         "label": "product.woodenBlinds",
-        "href": "/prod/zaluzje/drewniane",
+        "href": "/produkty/zaluzje/drewniane",
         "alt": "Żaluzja drewniana"
       }
     ]
   },
   {
     "title": "product.mosquitoNets",
-    "titleHref": "/prod/moskitiery",
+    "titleHref": "/produkty/moskitiery",
     "items": [
       {
         "icon": "/products/moskitiera.svg",
         "label": "product.mosquitoNetWindows",
-        "href": "/prod/zaluzje/moskitieryokienne",
+        "href": "/produkty/zaluzje/moskitieryokienne",
         "alt": "Moskitiery okienne"
       },
       {
         "icon": "/products/drewniana.svg",
         "label": "product.mosquitoNetDoors",
-        "href": "/prod/zaluzje/drewniane",
+        "href": "/produkty/zaluzje/drewniane",
         "alt": "Żaluzja drewniana"
       }
     ]

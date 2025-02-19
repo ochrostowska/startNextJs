@@ -2,6 +2,7 @@
 import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
 import { useIsMobile } from "@/hooks/useResponsiveSizeBreakpoint";
+import Footer from "@/layout/footer/Footer";
 import { NavBar } from "@/layout/navbar";
 import {
   getInstallationInstructions,
@@ -18,6 +19,7 @@ import path from "path";
 import styles from "../styles/Home.module.scss";
 import AnimalFriendlyFragment from "./_home/AnimalFriendlyFragment";
 import ContactFragment from "./_home/ContactFragment";
+import EndFragment from "./_home/EndFragment";
 import GalleryFragment from "./_home/GalleryFragment";
 import Hero from "./_home/Hero";
 import InstallInstructionFragment from "./_home/InstallInstructionsFragment";
@@ -62,6 +64,8 @@ export default function Home(props: Props) {
         <ManufacturersFragment manufacturers={props.manufacturers} />
         <GalleryFragment />
         <ContactFragment />
+        <EndFragment />
+        <Footer />
       </main>
       <Sznurex />
     </>

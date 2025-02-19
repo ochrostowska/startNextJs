@@ -1,6 +1,6 @@
 import { Fragment } from "@/components/Fragment";
 import GoogleMapComponent from "@/components/GoogleMap/GoogleMap";
-import { CenteredP, H2, TinyLabel } from "@/components/Heading";
+import { H2, TinyLabel } from "@/components/Heading";
 import { useContactInformation } from "@/services/contact/useContactInformation";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
@@ -32,6 +32,9 @@ const ContactFragment = () => {
       <ContactWrapper>
         <Column>
           <ContactPart>
+            <p>{translate("contact.mapHint")}</p>
+          </ContactPart>
+          <ContactPart>
             <TinyLabel>{translate("contact.address")}</TinyLabel>
             {addressLines.map((line) => (
               <BoldP key={line}>{line}</BoldP>
@@ -54,7 +57,6 @@ const ContactFragment = () => {
           <GoogleMapComponent height={300} center={center} />
         </Column>
       </ContactWrapper>
-      <CenteredP>{translate("contact.mapHint")}</CenteredP>
     </Fragment>
   );
 };
