@@ -77,6 +77,7 @@ const SingleService = ({
     tabLand: 180,
     desktop: 200,
     bigDesktop: 250,
+    phone: 100,
   });
 
   return (
@@ -164,6 +165,10 @@ const SingleServiceWrapper = styled.div`
     gap: 0rem;
     align-items: flex-start;
     margin-bottom: 2rem;
+
+    & > *:not(:first-child) {
+      padding-top: 1rem;
+    }
   }
 `;
 

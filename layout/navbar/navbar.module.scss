@@ -42,6 +42,7 @@
 
   @include respond(tab-port) {
     margin-left: $fragment-horizontal-offset-tablet;
+
     margin-right: $fragment-horizontal-offset-tablet;
     margin-top: $fragment-vertical-offset-tablet;
 

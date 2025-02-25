@@ -127,7 +127,7 @@
         "id": "instrukcjeMontazu",
         "type": "ContentType",
         "createdAt": "2025-02-13T18:03:48.340Z",
-        "updatedAt": "2025-02-13T18:03:48.940Z",
+        "updatedAt": "2025-02-20T13:58:23.364Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -135,8 +135,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 1,
-        "publishedAt": "2025-02-13T18:03:48.940Z",
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-20T13:58:23.364Z",
         "firstPublishedAt": "2025-02-13T18:03:48.940Z",
         "createdBy": {
           "sys": {
@@ -152,8 +152,8 @@
             "id": "2q7J05xdcDqfTTnd5gHYmW"
           }
         },
-        "publishedCounter": 1,
-        "version": 2,
+        "publishedCounter": 2,
+        "version": 4,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -184,6 +184,407 @@
         {
           "id": "url",
           "name": "url",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "produkt",
+          "name": "produkt",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "produkty"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "rodzajeProduktow",
+        "type": "ContentType",
+        "createdAt": "2025-02-20T13:52:45.292Z",
+        "updatedAt": "2025-02-20T14:04:42.810Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2025-02-20T14:04:42.810Z",
+        "firstPublishedAt": "2025-02-20T13:52:45.800Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/content_types/rodzajeProduktow"
+      },
+      "displayField": "nazwa",
+      "name": "rodzajeProduktow",
+      "description": "Rodzaje kategorii produktów np przesłony wewnetrzne, zewnetrzne, automatyka",
+      "fields": [
+        {
+          "id": "nazwa",
+          "name": "nazwa",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "priorytet",
+          "name": "priorytet",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "defaultDisplayString",
+          "name": "defaultDisplayString",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "produkty",
+        "type": "ContentType",
+        "createdAt": "2025-02-20T13:56:37.056Z",
+        "updatedAt": "2025-02-20T14:08:52.083Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-20T14:08:52.083Z",
+        "firstPublishedAt": "2025-02-20T13:56:37.543Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/content_types/produkty"
+      },
+      "displayField": "nazwa",
+      "name": "produkty",
+      "description": "Rodzaje produktów np rolety plisowane, moskitiery drzwiowe,",
+      "fields": [
+        {
+          "id": "nazwa",
+          "name": "nazwa",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "rodzaj",
+          "name": "rodzaj",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "rodzajeProduktow"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "priorytet",
+          "name": "priorytet",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "defaultDisplayString",
+          "name": "defaultDisplayString",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "podstronaProduktu",
+        "type": "ContentType",
+        "createdAt": "2025-02-20T14:01:37.551Z",
+        "updatedAt": "2025-02-20T14:01:38.153Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2025-02-20T14:01:38.153Z",
+        "firstPublishedAt": "2025-02-20T14:01:38.153Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/content_types/podstronaProduktu"
+      },
+      "displayField": null,
+      "name": "podstronaProduktu",
+      "description": "Konfiguracja tekstu wyświetlanego na podstronie produktu",
+      "fields": [
+        {
+          "id": "produkt",
+          "name": "produkt",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        },
+        {
+          "id": "content",
+          "name": "content",
+          "type": "RichText",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline"
+              ],
+              "message": "Only bold, italic, and underline marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "heading-4",
+                "heading-5",
+                "heading-6",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "asset-hyperlink",
+                "embedded-entry-inline",
+                "entry-hyperlink",
+                "hyperlink"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
+            },
+            {
+              "nodes": {
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "kartyPomiarowe",
+        "type": "ContentType",
+        "createdAt": "2025-02-24T13:12:32.440Z",
+        "updatedAt": "2025-02-24T13:12:32.874Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 1,
+        "publishedAt": "2025-02-24T13:12:32.874Z",
+        "firstPublishedAt": "2025-02-24T13:12:32.874Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 2,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/content_types/kartyPomiarowe"
+      },
+      "displayField": "nazwa",
+      "name": "kartyPomiarowe",
+      "description": "Karty pomiarowe do pobrania",
+      "fields": [
+        {
+          "id": "karta",
+          "name": "karta",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "nazwa",
+          "name": "nazwa",
           "type": "Symbol",
           "localized": false,
           "required": true,
@@ -297,7 +698,7 @@
             "linkType": "Space"
           }
         },
-        "version": 2,
+        "version": 4,
         "createdAt": "2025-02-13T18:03:49.079Z",
         "createdBy": {
           "sys": {
@@ -306,7 +707,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2025-02-13T18:03:49.808Z",
+        "updatedAt": "2025-02-20T13:58:24.279Z",
         "updatedBy": {
           "sys": {
             "id": "2q7J05xdcDqfTTnd5gHYmW",
@@ -344,6 +745,265 @@
             "helpText": "Link do instrukcji wideo"
           },
           "widgetId": "urlEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "produkt",
+          "widgetId": "entryCardEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "59z7fiftx8m0",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 8,
+        "createdAt": "2025-02-20T13:52:45.954Z",
+        "createdBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-20T14:04:43.658Z",
+        "updatedBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "rodzajeProduktow",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "nazwa",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "priorytet",
+          "settings": {
+            "helpText": "Opcjonalna wartość, im większy priorytet tym wyżej pokaże się na liście"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "defaultDisplayString",
+          "settings": {
+            "helpText": "Domyślny tekst po polsku do wyświetlenia ze spacjami"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "59z7fiftx8m0",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 4,
+        "createdAt": "2025-02-20T13:56:37.685Z",
+        "createdBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-20T14:08:52.841Z",
+        "updatedBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "produkty",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "nazwa",
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "rodzaj",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "priorytet",
+          "settings": {
+            "helpText": "Opcjonalna wartość, im większy priorytet tym wyżej pokaże się na liście"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "defaultDisplayString",
+          "settings": {
+            "helpText": "Domyślny tekst po polsku do wyświetlenia ze spacjami"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "59z7fiftx8m0",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2025-02-20T14:01:38.309Z",
+        "createdBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-20T14:01:38.907Z",
+        "updatedBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "podstronaProduktu",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "produkt",
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "content",
+          "widgetId": "richTextEditor",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "59z7fiftx8m0",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 2,
+        "createdAt": "2025-02-24T13:12:32.984Z",
+        "createdBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-02-24T13:12:33.496Z",
+        "updatedBy": {
+          "sys": {
+            "id": "2q7J05xdcDqfTTnd5gHYmW",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "kartyPomiarowe",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "karta",
+          "widgetId": "assetLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "nazwa",
+          "settings": {
+            "helpText": "Nazwa pod jaką wyswietlać się bedzie karta pomiarowa"
+          },
+          "widgetId": "singleLine",
           "widgetNamespace": "builtin"
         }
       ]
@@ -841,9 +1501,2595 @@
           "en-US": "https://www.youtube.com/watch?v=qEplkZlAbdk"
         }
       }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "1OazMLjz0aSx8AVevsBITn",
+        "type": "Entry",
+        "createdAt": "2025-02-18T18:04:13.817Z",
+        "updatedAt": "2025-02-18T18:05:18.388Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-18T18:05:18.388Z",
+        "firstPublishedAt": "2025-02-18T18:05:18.388Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "instrukcjeMontazu"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/1OazMLjz0aSx8AVevsBITn"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Montaż rolet kasetowych"
+        },
+        "url": {
+          "en-US": "https://www.youtube.com/watch?v=b7u_iHRFxr8"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "1FsFojskth5GlKiNJ9ZDds",
+        "type": "Entry",
+        "createdAt": "2025-02-18T18:07:57.278Z",
+        "updatedAt": "2025-02-18T18:08:38.867Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2025-02-18T18:08:38.867Z",
+        "firstPublishedAt": "2025-02-18T18:08:38.867Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "instrukcjeMontazu"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/1FsFojskth5GlKiNJ9ZDds"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Montaż rolet rzymskich z mechanizmem sznurkowym"
+        },
+        "url": {
+          "en-US": "https://www.youtube.com/watch?v=my4tZESvxMk"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "1Zj5WHEXh7CPySpDMfGD9W",
+        "type": "Entry",
+        "createdAt": "2025-02-18T18:08:50.077Z",
+        "updatedAt": "2025-02-18T18:09:02.998Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-18T18:09:02.998Z",
+        "firstPublishedAt": "2025-02-18T18:09:02.998Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "instrukcjeMontazu"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/1Zj5WHEXh7CPySpDMfGD9W"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "Montaż rolet rzymskich z mechanizmem koralikowym"
+        },
+        "url": {
+          "en-US": "https://www.youtube.com/watch?v=cFMeerAx0dk"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "2vLPFWEy2C5ClJoxpSn7wz",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:02:00.642Z",
+        "updatedAt": "2025-02-20T14:05:39.281Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-02-20T14:05:39.281Z",
+        "firstPublishedAt": "2025-02-20T14:05:39.281Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "rodzajeProduktow"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/2vLPFWEy2C5ClJoxpSn7wz"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "wewnetrzne"
+        },
+        "priorytet": {
+          "en-US": 10
+        },
+        "defaultDisplayString": {
+          "en-US": "Przesłony wewnętrzne"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "4B5BsE1eZifPwsrYWm21Gz",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:05:54.604Z",
+        "updatedAt": "2025-02-20T14:06:12.238Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-02-20T14:06:12.238Z",
+        "firstPublishedAt": "2025-02-20T14:06:12.238Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "rodzajeProduktow"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/4B5BsE1eZifPwsrYWm21Gz"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "zewnetrzne"
+        },
+        "priorytet": {
+          "en-US": 9
+        },
+        "defaultDisplayString": {
+          "en-US": "Przesłony zewnętrzne"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "5mmGZRbiltoxgwHkEWjLPx",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:07:18.383Z",
+        "updatedAt": "2025-02-20T14:10:29.795Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2025-02-20T14:10:29.795Z",
+        "firstPublishedAt": "2025-02-20T14:10:29.795Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "produkty"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/5mmGZRbiltoxgwHkEWjLPx"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "roletyMaterialowe"
+        },
+        "rodzaj": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2vLPFWEy2C5ClJoxpSn7wz"
+            }
+          }
+        },
+        "defaultDisplayString": {
+          "en-US": "Rolety materiałowe"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "2zCOgLCGuQLIgXvC7Nqrce",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:10:56.967Z",
+        "updatedAt": "2025-02-20T14:11:23.403Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-20T14:11:23.403Z",
+        "firstPublishedAt": "2025-02-20T14:11:23.403Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "produkty"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/2zCOgLCGuQLIgXvC7Nqrce"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "plisy"
+        },
+        "rodzaj": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2vLPFWEy2C5ClJoxpSn7wz"
+            }
+          }
+        },
+        "defaultDisplayString": {
+          "en-US": "Plisy"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "7FkQyUdEzAa8BwU0gNfwKv",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:11:32.429Z",
+        "updatedAt": "2025-02-20T14:11:48.198Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-02-20T14:11:48.198Z",
+        "firstPublishedAt": "2025-02-20T14:11:48.198Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "produkty"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/7FkQyUdEzAa8BwU0gNfwKv"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "rzymskie"
+        },
+        "rodzaj": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2vLPFWEy2C5ClJoxpSn7wz"
+            }
+          }
+        },
+        "defaultDisplayString": {
+          "en-US": "Zasłony rzymskie"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "4g1qKy8rUjUIAbUXgp3OCy",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:12:01.897Z",
+        "updatedAt": "2025-02-20T14:12:29.233Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-02-20T14:12:29.233Z",
+        "firstPublishedAt": "2025-02-20T14:12:29.233Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "produkty"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/4g1qKy8rUjUIAbUXgp3OCy"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "zaluzjeAluminiowe"
+        },
+        "rodzaj": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2vLPFWEy2C5ClJoxpSn7wz"
+            }
+          }
+        },
+        "defaultDisplayString": {
+          "en-US": "Żaluzje aluminiowe"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "3hQJHa3IJXUjW281dffv1u",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:12:36.588Z",
+        "updatedAt": "2025-02-20T14:12:59.980Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-02-20T14:12:59.980Z",
+        "firstPublishedAt": "2025-02-20T14:12:59.980Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "produkty"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/3hQJHa3IJXUjW281dffv1u"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "zaluzjeDrewniane"
+        },
+        "rodzaj": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2vLPFWEy2C5ClJoxpSn7wz"
+            }
+          }
+        },
+        "defaultDisplayString": {
+          "en-US": "Żaluzje drewniane i bambusowe"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "7cEh4YPNfOiyWH8dryzGiK",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:13:44.671Z",
+        "updatedAt": "2025-02-20T14:14:21.645Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-20T14:14:21.645Z",
+        "firstPublishedAt": "2025-02-20T14:14:21.645Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "produkty"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/7cEh4YPNfOiyWH8dryzGiK"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "pionowe"
+        },
+        "rodzaj": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2vLPFWEy2C5ClJoxpSn7wz"
+            }
+          }
+        },
+        "defaultDisplayString": {
+          "en-US": "Żaluzje pionowe"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "K0JSPYpzcG3XrzdlpzAr1",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:14:30.859Z",
+        "updatedAt": "2025-02-20T14:15:15.579Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-20T14:15:15.579Z",
+        "firstPublishedAt": "2025-02-20T14:15:15.579Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "produkty"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/K0JSPYpzcG3XrzdlpzAr1"
+      },
+      "fields": {
+        "nazwa": {
+          "en-US": "zaslony"
+        },
+        "rodzaj": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2vLPFWEy2C5ClJoxpSn7wz"
+            }
+          }
+        },
+        "defaultDisplayString": {
+          "en-US": "Zasłony"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "3hu2bMc0RcbPJFKzNF8p6q",
+        "type": "Entry",
+        "createdAt": "2025-02-20T14:22:49.240Z",
+        "updatedAt": "2025-02-20T16:10:56.529Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 66,
+        "publishedAt": "2025-02-20T16:10:56.529Z",
+        "firstPublishedAt": "2025-02-20T14:51:46.919Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 2,
+        "version": 67,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "podstronaProduktu"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/3hu2bMc0RcbPJFKzNF8p6q"
+      },
+      "fields": {
+        "produkt": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Entry",
+              "id": "2zCOgLCGuQLIgXvC7Nqrce"
+            }
+          }
+        },
+        "content": {
+          "en-US": {
+            "nodeType": "document",
+            "data": {
+            },
+            "content": [
+              {
+                "nodeType": "heading-1",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Plisy (rolety plisowane | żaluzje plisowane)",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "heading-3",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "\nCechy produktu",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "\n• Żaluzje plisowane (plisy) to elastyczne osłony okienne w formie harmonijki, które można dostosować do różnych kształtów okien, np. trapezów, trójkątów czy półkoli.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Mogą być stosowane w oknach dachowych i przeszklonych powierzchniach poziomych.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Istnieją modele ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "dzień-noc",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", które łączą dwie różne tkaniny w jednym systemie.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Plisy można sterować ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "uchwytem, sznurkiem, łańcuszkiem lub elektrycznie (bateryjnie)",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ".",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Po całkowitym zsunięciu zajmują niewielką powierzchnię okna.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Istnieje możliwość zasłonięcia ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "dowolnej części okna",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", zarówno od góry, jak i od dołu (plisy dwukierunkowe).",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Firma oferuje tkaniny ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "transparentne, półprzezroczyste i zaciemniające",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ".",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Do wyboru są ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "klasyczne rolety plisowane",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " oraz ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "plisy typu “plaster miodu”",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " (termoizolacyjne).",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "• Możliwość dopasowania koloru osprzętu (np. antracyt, szary bazaltowy, biel kremowa, okleiny drewnopodobne).",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "heading-3",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "\n",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "Żaluzje plisowane zaciemniające ",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Rolety plisowane zaciemniające skutecznie zatrzymują promienie słoneczne, tworząc przyjemny cień i komfortową temperaturę w pomieszczeniu.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Dzięki ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "specjalnej warstwie odbijającej światło",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", wnętrze nie nagrzewa się nawet w upalne dni.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Idealne do ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "sypialni, biura czy pokoju dziecięcego",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " – wszędzie tam, gdzie potrzebujesz pełnej kontroli nad światłem.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Plisa na drzwi balkonowe? Plisa na okno dachowe? Żaden problem!",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Z naszymi plisami ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "dopasujesz osłonę do każdego okna i każdej potrzeby",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ".",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "heading-3",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "\n\nŻaluzje plisowane bezinwazyjne - montaż bez wiercenia i wkrętów\n",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Nasze ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "plisy bezinwazyjne",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " to rozwiązanie, które montujesz ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "bez śrub, wkrętów i bałaganu",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ".",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Wybierz model ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "zawieszany na ramie okna",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " lub ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "samoprzylepny",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", który przylgnie do szyby jak druga skóra.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Idealne rozwiązanie dla wynajmowanych mieszkań, biur i wszędzie tam, gdzie liczy się prostota, estetyka i brak permanentnych \"szkód\"! :) ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "A jeśli Twoje okna są ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "wąskie, nieuchylne lub mają nietypowy kształt",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " – bez obaw! Plisy bezinwazyjne świetnie dopasowują się nawet w trudnych warunkach.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "embedded-asset-block",
+                "data": {
+                  "target": {
+                    "sys": {
+                      "id": "2QmUptHd0h2Csxj7QdCvmd",
+                      "type": "Link",
+                      "linkType": "Asset"
+                    }
+                  }
+                },
+                "content": [
+                ]
+              },
+              {
+                "nodeType": "embedded-asset-block",
+                "data": {
+                  "target": {
+                    "sys": {
+                      "id": "23zwTDZNGn4gTHSiiwldic",
+                      "type": "Link",
+                      "linkType": "Asset"
+                    }
+                  }
+                },
+                "content": [
+                ]
+              },
+              {
+                "nodeType": "heading-3",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Plisy dzień-noc – elastyczność o każdej porze",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Słońce w dzień, prywatność w nocy. ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "Plisy dzień-noc",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " pozwalają ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "swobodnie łączyć dwie tkaniny",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", dzięki czemu sam decydujesz, ile światła wpada do wnętrza.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Ich konstrukcja jest podobna do tradycyjnych plis, jednak różnice obejmują:",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "unordered-list",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "list-item",
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "nodeType": "paragraph",
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "nodeType": "text",
+                            "value": " Dwie ruchome rynny",
+                            "marks": [
+                            ],
+                            "data": {
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "nodeType": "list-item",
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "nodeType": "paragraph",
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "nodeType": "text",
+                            "value": " Szyna górna montowana na stałe",
+                            "marks": [
+                            ],
+                            "data": {
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "nodeType": "list-item",
+                    "data": {
+                    },
+                    "content": [
+                      {
+                        "nodeType": "paragraph",
+                        "data": {
+                        },
+                        "content": [
+                          {
+                            "nodeType": "text",
+                            "value": " Dwa rodzaje tkanin – ",
+                            "marks": [
+                            ],
+                            "data": {
+                            }
+                          },
+                          {
+                            "nodeType": "text",
+                            "value": "transparentna na dzień, zaciemniająca na noc",
+                            "marks": [
+                              {
+                                "type": "bold"
+                              }
+                            ],
+                            "data": {
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Wpuść światło, gdy chcesz, i odetnij je, gdy potrzebujesz – ",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "pełna swoboda ustawienia",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {
+                    }
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " dla maksymalnego komfortu.",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {
+                },
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "",
+                    "marks": [
+                    ],
+                    "data": {
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "G3gs8cPajesBtUDdouJog",
+        "type": "Entry",
+        "createdAt": "2025-02-24T13:12:40.115Z",
+        "updatedAt": "2025-02-24T13:13:22.452Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-02-24T13:13:22.452Z",
+        "firstPublishedAt": "2025-02-24T13:13:22.452Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "kartyPomiarowe"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/G3gs8cPajesBtUDdouJog"
+      },
+      "fields": {
+        "karta": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "5Na2cDpt0qLjb2JABXkZt8"
+            }
+          }
+        },
+        "nazwa": {
+          "en-US": "Roletki - Fantazja Dachowa Premium"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "1Ww3OuutrPjokm7nWEZ6TM",
+        "type": "Entry",
+        "createdAt": "2025-02-24T13:13:30.509Z",
+        "updatedAt": "2025-02-24T13:13:50.718Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 3,
+        "publishedAt": "2025-02-24T13:13:50.718Z",
+        "firstPublishedAt": "2025-02-24T13:13:50.718Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 4,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "kartyPomiarowe"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/1Ww3OuutrPjokm7nWEZ6TM"
+      },
+      "fields": {
+        "karta": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "1AFtr2AH80tYBGYMv9mwnr"
+            }
+          }
+        },
+        "nazwa": {
+          "en-US": "Roletki - Impresja Classy"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "2LaoMuSuOfbtwYpZVQn9i6",
+        "type": "Entry",
+        "createdAt": "2025-02-24T13:14:08.255Z",
+        "updatedAt": "2025-02-24T13:14:33.395Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 4,
+        "publishedAt": "2025-02-24T13:14:33.395Z",
+        "firstPublishedAt": "2025-02-24T13:14:33.395Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 5,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "kartyPomiarowe"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/entries/2LaoMuSuOfbtwYpZVQn9i6"
+      },
+      "fields": {
+        "karta": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "22Xd161difoDi0z4MsIF5a"
+            }
+          }
+        },
+        "nazwa": {
+          "en-US": "Żaluzje poziome - Venus/Venus bambusowa 25mm"
+        }
+      }
     }
   ],
   "assets": [
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "23zwTDZNGn4gTHSiiwldic",
+        "type": "Asset",
+        "createdAt": "2025-02-20T16:09:54.740Z",
+        "updatedAt": "2025-02-20T16:11:11.707Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2025-02-20T16:11:11.707Z",
+        "firstPublishedAt": "2025-02-20T16:11:11.707Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/assets/23zwTDZNGn4gTHSiiwldic"
+      },
+      "fields": {
+        "title": {
+          "en-US": "plisy-bezinwazyjne-montaz-na-oknie"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/59z7fiftx8m0/23zwTDZNGn4gTHSiiwldic/491f9bf3993de3793b8448e0aa4fac98/plisy-bezinwazyjne-montaz-na-oknie.jpg",
+            "details": {
+              "size": 369649,
+              "image": {
+                "width": 1200,
+                "height": 900
+              }
+            },
+            "fileName": "plisy-bezinwazyjne-montaz-na-oknie.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "2QmUptHd0h2Csxj7QdCvmd",
+        "type": "Asset",
+        "createdAt": "2025-02-20T16:09:54.744Z",
+        "updatedAt": "2025-02-20T16:11:11.700Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2025-02-20T16:11:11.700Z",
+        "firstPublishedAt": "2025-02-20T16:11:11.700Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/assets/2QmUptHd0h2Csxj7QdCvmd"
+      },
+      "fields": {
+        "title": {
+          "en-US": "plisy-bezinwazyjne-przyszybowe-granat"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/59z7fiftx8m0/2QmUptHd0h2Csxj7QdCvmd/39eeead3ff295d47721aeb3ba69a8866/plisy-bezinwazyjne-przyszybowe-granat.jpg",
+            "details": {
+              "size": 511255,
+              "image": {
+                "width": 900,
+                "height": 1200
+              }
+            },
+            "fileName": "plisy-bezinwazyjne-przyszybowe-granat.jpg",
+            "contentType": "image/jpeg"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "22Xd161difoDi0z4MsIF5a",
+        "type": "Asset",
+        "createdAt": "2025-02-24T13:08:14.787Z",
+        "updatedAt": "2025-02-24T13:08:49.721Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2025-02-24T13:08:49.721Z",
+        "firstPublishedAt": "2025-02-24T13:08:49.721Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/assets/22Xd161difoDi0z4MsIF5a"
+      },
+      "fields": {
+        "title": {
+          "en-US": "zaluzje poziome venus bambusowa 25mm"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/59z7fiftx8m0/22Xd161difoDi0z4MsIF5a/ba803efd49a08d5573d44c48a1c06da0/zaluzje_poziome_venus_bambusowa_25mm.png",
+            "details": {
+              "size": 152251,
+              "image": {
+                "width": 1227,
+                "height": 829
+              }
+            },
+            "fileName": "zaluzje_poziome_venus_bambusowa_25mm.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "1AFtr2AH80tYBGYMv9mwnr",
+        "type": "Asset",
+        "createdAt": "2025-02-24T13:08:14.794Z",
+        "updatedAt": "2025-02-24T13:08:49.724Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2025-02-24T13:08:49.724Z",
+        "firstPublishedAt": "2025-02-24T13:08:49.724Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/assets/1AFtr2AH80tYBGYMv9mwnr"
+      },
+      "fields": {
+        "title": {
+          "en-US": "roletki impresja classy"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/59z7fiftx8m0/1AFtr2AH80tYBGYMv9mwnr/d819255cdb62da4cfc182b90aadc840b/roletki_impresja_classy.png",
+            "details": {
+              "size": 403495,
+              "image": {
+                "width": 1238,
+                "height": 838
+              }
+            },
+            "fileName": "roletki_impresja_classy.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "59z7fiftx8m0"
+          }
+        },
+        "id": "5Na2cDpt0qLjb2JABXkZt8",
+        "type": "Asset",
+        "createdAt": "2025-02-24T13:08:14.812Z",
+        "updatedAt": "2025-02-24T13:08:49.728Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 2,
+        "publishedAt": "2025-02-24T13:08:49.728Z",
+        "firstPublishedAt": "2025-02-24T13:08:49.728Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 3,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2q7J05xdcDqfTTnd5gHYmW"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/59z7fiftx8m0/environments/master/assets/5Na2cDpt0qLjb2JABXkZt8"
+      },
+      "fields": {
+        "title": {
+          "en-US": "roletki fantazja dachowa premium"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/59z7fiftx8m0/5Na2cDpt0qLjb2JABXkZt8/7c5fe8a1e4c986ef49e2b8f3f52e0a9c/roletki_fantazja_dachowa_premium.png",
+            "details": {
+              "size": 210901,
+              "image": {
+                "width": 1240,
+                "height": 833
+              }
+            },
+            "fileName": "roletki_fantazja_dachowa_premium.png",
+            "contentType": "image/png"
+          }
+        }
+      }
+    }
   ],
   "locales": [
     {

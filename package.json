@@ -13,6 +13,7 @@
     "cf-generate-types": "cf-content-types-generator contentful/export.json --out types/contentful --v10"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^16.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-regular-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
@@ -36,7 +37,6 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "babel-plugin-macros": "^3.1.0",
     "@storybook/addon-essentials": "^7.3.1",
     "@storybook/addon-interactions": "^7.3.1",
     "@storybook/addon-links": "^7.3.1",
@@ -46,6 +46,7 @@
     "@storybook/nextjs": "^7.3.1",
     "@storybook/react": "^7.3.1",
     "@storybook/testing-library": "^0.2.0",
+    "babel-plugin-macros": "^3.1.0",
     "babel-plugin-styled-components": "^2.1.4",
     "cf-content-types-generator": "^2.15.5",
     "contentful-cli": "^3.7.3",

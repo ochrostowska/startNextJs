@@ -1,5 +1,6 @@
 import COLORS from "@/styles/colors";
 import styled from "styled-components";
+import { CenteredP, H5 } from "../Heading";
 import {
   GalleryItem,
   Props as GalleryItemProps,
@@ -20,30 +21,18 @@ export const LabeledGalleryItem = ({
   return (
     <Wrapper>
       <Anchor href={href}>
-        <div>
-          <GalleryItem {...rest} href={href} />
-        </div>
+        <GalleryItem {...rest} href={href} />
         <Label>{label}</Label>
-        <Subtitle>{subtitle}</Subtitle>
+        <CenteredP>{subtitle}</CenteredP>
       </Anchor>
     </Wrapper>
   );
 };
 
-const Label = styled.p`
-  font-size: 1.8rem;
+const Label = styled(H5)`
   transition: all 0.2s;
-  font-weight: 400;
-  text-transform: uppercase;
   margin-top: 2rem;
   text-align: center;
-  letter-spacing: 0.3rem;
-  @media ${(props) => props.theme.media.tabPort} {
-    font-size: 1.6rem;
-  }
-  @media ${(props) => props.theme.media.phone} {
-    font-size: 2rem;
-  }
 `;
 
 const Anchor = styled.a`
@@ -53,7 +42,7 @@ const Anchor = styled.a`
 
   &:hover {
     ${Label} {
-      box-shadow: inset 0 -1.6rem 0 ${(props) => props.theme.colors.primaryLight};
+      box-shadow: inset 0 -1.3rem 0 ${(props) => props.theme.colors.primaryLight};
     }
     ${GalleryItemStyled} {
       box-shadow: 6px 6px 0px 0px ${COLORS.primaryDark};
@@ -63,16 +52,7 @@ const Anchor = styled.a`
   cursor: pointer;
 `;
 
-const Subtitle = styled.p`
-  text-align: center;
-  font-size: 1.6rem;
-`;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  @media ${(props) => props.theme.media.phone} {
-    margin-top: 2em;
-    margin-bottom: 2em;
-  }
 `;

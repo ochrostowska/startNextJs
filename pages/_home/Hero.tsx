@@ -58,6 +58,7 @@ const HeroWrapper = styled.div`
   @media ${(props) => props.theme.media.phone} {
     flex-direction: column-reverse;
     gap: 3rem;
+    padding-bottom: 4rem;
     padding-top: 1rem;
   }
 `;

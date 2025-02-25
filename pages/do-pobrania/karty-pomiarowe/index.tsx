@@ -1,9 +1,8 @@
 // import { Buttonex } from "@/stories/Buttonex";
-import { Fragment } from "@/components/Fragment";
-import { H1 } from "@/components/Heading";
 import { Sznurex } from "@/components/Sznurex";
 import { Head } from "@/layout/Head";
 import { NavBar } from "@/layout/navbar";
+import MeasurementCardsFragment from "@/pages/_home/MeasurementCardsFragment";
 import {
   getInstallationInstructions,
   getMeasurementCards,
@@ -12,11 +11,8 @@ import {
   InstallationInstructions,
   MeasurementCard,
 } from "@/services/contentful/types";
-import { translate } from "@/translations";
 import { sortBy } from "lodash";
-import styles from "../../styles/Home.module.scss";
-import InstallInstructionFragment from "../_home/InstallInstructionsFragment";
-import MeasurementCardsFragment from "../_home/MeasurementCardsFragment";
+import styles from "../../../styles/Home.module.scss";
 
 type Props = {
   installationInstructions: InstallationInstructions[];
@@ -26,18 +22,10 @@ type Props = {
 export default function (props: Props) {
   return (
     <>
-      <Head title="Do pobrania" />
+      <Head title={"Karty pomiarowe"} />
       <NavBar />
       <main className={`${styles.main} `}>
-        <Fragment>
-          <H1>{translate("downloads.title")}</H1>
-          <p>{translate("downloads.subtitle")}</p>
-        </Fragment>
         <MeasurementCardsFragment measurementCards={props.measurementCards} />
-
-        <InstallInstructionFragment
-          instructions={props.installationInstructions}
-        />
       </main>
       <Sznurex />
     </>

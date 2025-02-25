@@ -113,8 +113,8 @@ const ButtonBase = css<ButtonBaseProps>`
 
   @media ${(props) => props.theme.media.phone} {
     font-size: 1.4rem;
-    padding: 1.1rem 2.2rem;
-    letter-spacing: 0.3rem;
+    padding: 1rem 2rem;
+    letter-spacing: 0.25rem;
   }
 
   &:hover {

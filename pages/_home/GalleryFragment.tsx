@@ -13,6 +13,7 @@ const GalleryFragment = () => {
   const maxPhotoSize = useResponsiveValue(320, {
     tabLand: 200,
     desktop: 240,
+    phone: 180,
   });
 
   return (
@@ -88,6 +89,9 @@ const GalleryItems = styled.div`
 
   @media ${(props) => props.theme.media.phone} {
     flex-direction: column;
+    gap: 3rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
   }
 `;
 

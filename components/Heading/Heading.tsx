@@ -28,8 +28,9 @@ const H1Styles = css`
   }
 
   @media ${(props) => props.theme.media.phone} {
-    font-size: 3rem;
+    font-size: 2.6rem;
     line-height: 130%;
+    margin-bottom: 1.6rem;
   }
 
   @media ${(props) => props.theme.media.bigDesktop} {
@@ -50,6 +51,11 @@ const H2Styles = css`
     font-size: 2.6rem;
     line-height: 130%;
   }
+
+  @media ${(props) => props.theme.media.phone} {
+    font-size: 2.2rem;
+    line-height: 130%;
+  }
 `;
 
 const H3Styles = css`
@@ -59,6 +65,10 @@ const H3Styles = css`
 
   @media ${(props) => props.theme.media.tabPort} {
     font-size: 2.2rem;
+  }
+
+  @media ${(props) => props.theme.media.phone} {
+    font-size: 2rem;
   }
 `;
 
@@ -75,6 +85,11 @@ const H4Styles = css`
     font-size: 2.2rem;
     margin-bottom: 3rem;
   }
+
+  @media ${(props) => props.theme.media.phone} {
+    font-size: 1.8rem;
+    margin-bottom: 2.2rem;
+  }
 `;
 
 const H5Styles = css`
@@ -82,9 +97,16 @@ const H5Styles = css`
   text-align: center;
   font-size: 2rem;
   font-weight: 500;
-  letter-spacing: 0.6rem;
+  letter-spacing: 0.5rem;
+
   @media ${(props) => props.theme.media.tabLand} {
     font-size: 1.6rem;
+    letter-spacing: 0.4rem;
+  }
+
+  @media ${(props) => props.theme.media.phone} {
+    font-size: 1.4rem;
+    letter-spacing: 0.3rem;
   }
 `;
 

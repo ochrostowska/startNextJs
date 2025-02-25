@@ -12,3 +12,18 @@ export async function getContentfulEntries<T extends EntrySkeletonType>(
     content_type: contentType,
   });
 }
+
+export async function getContentfulEntryWithQuery<T extends EntrySkeletonType>(
+  contentType: string,
+  queryParams: Record<string, unknown>
+) {
+  const result = await contentfulClient.getEntries<T>({
+    content_type: contentType,
+    limit: 1,
+    ...queryParams,
+  });
+  if (result?.items.length === 0) {
+    return null;
+  }
+  return result.items[0];
+}

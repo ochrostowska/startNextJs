@@ -10,8 +10,12 @@ type UnwrapContentfulField<T> = T extends EntryFieldTypes.Symbol
   ? number
   : T extends EntryFieldTypes.Boolean
   ? boolean
+  : T extends EntryFieldTypes.EntryLink<infer U>
+  ? string | null
   : T extends EntryFieldTypes.Array<infer U>
   ? UnwrapContentfulField<U>[]
+  : T extends EntryFieldTypes.AssetLink
+  ? string | null
   : T; // Keep other types unchanged
 
 // Unwraps fields while keeping required and optional fields correctly typed

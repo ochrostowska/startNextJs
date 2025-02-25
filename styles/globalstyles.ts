@@ -35,7 +35,7 @@ body {
     font-size: 1.8rem;
     }
     @media ${(props) => props.theme.media.phone} {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
 }
 

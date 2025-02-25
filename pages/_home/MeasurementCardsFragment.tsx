@@ -1,8 +1,10 @@
 import { ArrowLink } from "@/components/ArrowLink";
+import { Button } from "@/components/Button";
 import { Fragment } from "@/components/Fragment";
 import { H2 } from "@/components/Heading";
 import { Photo } from "@/components/Photo";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
+import { MeasurementCard } from "@/services/contentful/types";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
@@ -11,10 +13,18 @@ import styled from "styled-components";
 export const MEASUREMENT_CARDS_FRAGMENT_ID = "measurements-cards";
 
 type Props = {
+  measurementCards: MeasurementCard[];
   hidePhoto?: boolean;
+  numberOfCards?: number;
+  addShowMoreButton?: boolean;
 };
 
-const MeasurementCardsFragment = ({ hidePhoto = false }: Props) => {
+const MeasurementCardsFragment = ({
+  measurementCards,
+  hidePhoto = false,
+  numberOfCards,
+  addShowMoreButton,
+}: Props) => {
   const { translate } = useTranslate();
 
   const iconHeight = useResponsiveValue(60, {
@@ -22,6 +32,10 @@ const MeasurementCardsFragment = ({ hidePhoto = false }: Props) => {
     desktop: 100,
     bigDesktop: 120,
   });
+
+  const cards = numberOfCards
+    ? measurementCards.slice(0, numberOfCards)
+    : measurementCards;
 
   return (
     <Fragment
@@ -33,19 +47,23 @@ const MeasurementCardsFragment = ({ hidePhoto = false }: Props) => {
         <WrapperLeft>
           <H2>{translate("measurementCards.title")}</H2>
           <p>{translate("measurementCards.subtitle")}</p>
-          <ArrowLink label={translate("measurementCards.main")} href="/" />
-          <ArrowLink
-            label={translate("measurementCards.materialRollerBlinds")}
-            href="/"
-          />
-          <ArrowLink
-            label={translate("measurementCards.romanianBlinds")}
-            href="/"
-          />
-          <ArrowLink
-            label={translate("measurementCards.pleatedBlinds")}
-            href="/"
-          />
+          {cards.map((card) => (
+            <ArrowLink
+              key={card.nazwa}
+              label={card.nazwa}
+              href={card.karta!!}
+            />
+          ))}
+          {addShowMoreButton && (
+            <div style={{ display: "flex" }}>
+              <Button
+                icon="eye"
+                label={translate("gallery.seeMoreButton")}
+                variant="tertiary"
+                href="do-pobrania/karty-pomiarowe"
+              />
+            </div>
+          )}
         </WrapperLeft>
         {!hidePhoto && (
           <WrapperRight>
@@ -125,6 +143,10 @@ const StyledPhoto = styled(Photo)`
   width: 100%;
   height: 100%;
   object-fit: cover;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
 `;
 
 export default MeasurementCardsFragment;

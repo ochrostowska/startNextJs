@@ -7,10 +7,15 @@ import { NavBar } from "@/layout/navbar";
 import {
   getInstallationInstructions,
   getManufacturers,
+  getMeasurementCards,
+  getProductCategories,
+  getProductPageContent,
+  getProducts,
 } from "@/services/contentful/contentfulApi";
 import {
   InstallationInstructions,
   Manufacturer,
+  MeasurementCard,
 } from "@/services/contentful/types";
 import { TranslationKeys, translate } from "@/translations";
 import fs from "fs/promises";
@@ -33,6 +38,7 @@ type Props = {
   products: ProductsListSection[];
   manufacturers: Manufacturer[];
   installationInstructions: InstallationInstructions[];
+  measurementCards: MeasurementCard[];
 };
 
 export default function Home(props: Props) {
@@ -55,7 +61,12 @@ export default function Home(props: Props) {
         <WelcomeFragment />
         <ProductsFragment productSections={props.products} />
         <ServicesFragment />
-        <MeasurementCardsFragment hidePhoto={isMobile} />
+        <MeasurementCardsFragment
+          measurementCards={props.measurementCards}
+          numberOfCards={3}
+          hidePhoto={isMobile}
+          addShowMoreButton
+        />
         <InstallInstructionFragment
           instructions={props.installationInstructions}
           hidePhoto={isMobile}
@@ -86,13 +97,26 @@ export async function getStaticProps() {
 
   const manufacturers = await getManufacturers();
   const installationInstructions = await getInstallationInstructions();
+  const measurementCards = await getMeasurementCards();
   console.log("getStaticProps manufacturers", manufacturers);
+  console.log(
+    "getStaticProps installationInstructions",
+    installationInstructions
+  );
+
+  const productCategories = await getProductCategories();
+  console.log("getStaticProps productCategories", productCategories);
+  const products = await getProducts();
+  console.log("getStaticProps products", products);
+  const productPage = await getProductPageContent("2zCOgLCGuQLIgXvC7Nqrce");
+  console.log("getStaticProps productPage", productPage);
 
   return {
     props: {
       products: data,
       manufacturers,
       installationInstructions,
+      measurementCards,
     },
     revalidate: 60 * 60 * 24,
   };
