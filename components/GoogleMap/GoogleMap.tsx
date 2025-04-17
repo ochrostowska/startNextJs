@@ -16,7 +16,7 @@ type Props = {
 const GoogleMapComponent = ({ height, center, mapsKey }: Props) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: mapsKey,
+    googleMapsApiKey: process.env.GOOGLE_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading...</div>;
