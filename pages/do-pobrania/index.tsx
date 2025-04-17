@@ -23,7 +23,7 @@ type Props = {
   measurementCards: MeasurementCard[];
 };
 
-export default function (props: Props) {
+export default function DoPobrania(props: Props) {
   return (
     <>
       <Head title="Do pobrania" />

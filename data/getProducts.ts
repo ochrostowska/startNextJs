@@ -1,12 +1,12 @@
-const fs = require("fs");
+import { ProductTypeBasic } from "./types";
 
-export const readJSON = (path: string) => {
-  // Read the file synchronously
-  const rawData = fs.readFileSync(path, "utf8");
+import fs from "fs/promises";
+import path from "path";
 
-  // Parse the JSON data
-  const data = JSON.parse(rawData);
+export const getProductsBasic = async () => {
+  const filePath = path.join(process.cwd(), "data", "productsBasic.json");
+  const jsonData = await fs.readFile(filePath);
+  const data = JSON.parse(jsonData.toString()) as ProductTypeBasic[];
+
   return data;
 };
-
-export const getProducts = () => readJSON("products.json");

@@ -3,17 +3,25 @@ import { Fragment } from "@/components/Fragment";
 import { LabeledGalleryItem } from "@/components/Gallery";
 import { H2 } from "@/components/Heading";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
+import { Routes } from "@/nav/routes";
+import { getCloudinaryImageUrl } from "@/services/cloudinary/cloudinaryHelpers";
+import { RealisationImage } from "@/services/cloudinary/types";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
 import styled from "styled-components";
 
-const GalleryFragment = () => {
+type Props = {
+  images: RealisationImage[];
+  hidePhoto?: boolean;
+};
+
+const GalleryFragment = ({ images = [] }: Props) => {
   const { translate } = useTranslate();
 
-  const maxPhotoSize = useResponsiveValue(320, {
+  const maxPhotoSize = useResponsiveValue(180, {
     tabLand: 200,
     desktop: 240,
-    phone: 180,
+    bigDesktop: 320,
   });
 
   return (
@@ -22,42 +30,24 @@ const GalleryFragment = () => {
         <H2>{translate("gallery.title")}</H2>
         <p>{translate("gallery.subtitle")}</p>
         <GalleryItems>
-          <LabeledGalleryItem
-            href=""
-            src={
-              "https://wszczecinie.pl/storage/cache/places/c0927db24c6e1a0fa10d0c2a2435c3d8jpg/1500-c0927db24c6e1a0fa10d0c2a2435c3d8.jpg"
-            }
-            alt={translate("gallery.title")}
-            size={maxPhotoSize}
-            label="markiza tarasowa"
-            subtitle="Dom pod Szczecinem"
-          />
-          <LabeledGalleryItem
-            href=""
-            src={
-              "https://lh3.googleusercontent.com/proxy/qgmdoy1wulNSa9fKYEOT2nxXzrSGsuVrnSdWPj3wc5IuJjKUz1MQbgb70ICgIuSjDMdIa6zs4bDwnGmLIeTU2sLON9BmI1Iy3bbCFjs9wOCdKPctqValM9zww7dOttobdfJU4d42GEYDjmTg3Ux8iqJs_Yto8G0=w624-h720-n-k"
-            }
-            alt={translate("gallery.title")}
-            size={maxPhotoSize}
-            label="markiza tarasowa"
-            subtitle="Dom pod Szczecinem"
-          />
-          <LabeledGalleryItem
-            href=""
-            src={
-              "https://bi.im-g.pl/im/23/2f/16/z23265059IEG,Columbus-Coffee-na-rogu-al--Wojska-Polskiego-i-ul-.jpg"
-            }
-            alt={translate("gallery.title")}
-            size={maxPhotoSize}
-            label="markiza tarasowa"
-            subtitle="Dom pod Szczecinem"
-          />
+          {images.map((image) => (
+            <LabeledGalleryItem
+              key={image.id}
+              src={getCloudinaryImageUrl(image)}
+              alt={translate("gallery.title")}
+              size={maxPhotoSize}
+              label={image.metadata.title}
+              subtitle={image.metadata.desc}
+            />
+          ))}
         </GalleryItems>
+
         <ButtonWrapper>
           <Button
             icon="eye"
             label={translate("gallery.seeMoreButton")}
             variant="tertiary"
+            href={Routes.Realisations}
           />
         </ButtonWrapper>
       </Wrapper>
@@ -81,17 +71,29 @@ const ButtonWrapper = styled.div`
 
 const GalleryItems = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  row-gap: 4rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 
+  & > * {
+    flex: 1 1 calc(33.333% - 2rem);
+    max-width: calc(33.333% - 2rem);
+  }
+
   @media ${(props) => props.theme.media.phone} {
     flex-direction: column;
+    flex-wrap: nowrap;
     gap: 3rem;
     margin-top: 0rem;
     margin-bottom: 0rem;
+
+    & > * {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
   }
 `;
 

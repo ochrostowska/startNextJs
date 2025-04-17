@@ -1,0 +1,38 @@
+[
+  {
+    "id": "przeslony_wewnetrzne",
+    "label": "Przesłony wewnętrzne",
+    "items": [
+      { "id": "rolety_materialowe", "label": "Rolety materiałowe" },
+      { "id": "rolety_dziennoc", "label": "Rolety dzień-noc" },
+      { "id": "rolety_dachowe", "label": "Rolety dachowe" },
+      { "id": "plisy", "label": "Plisy" },
+      { "id": "zaslony_rzymskie", "label": "Zasłony rzymskie" },
+      { "id": "zaslony", "label": "Zasłony materiałowe i firany" },
+      { "id": "zaluzje_aluminiowe", "label": "Żaluzje aluminiowe" },
+      { "id": "zaluzje_drewniane", "label": "Żaluzje drewniane i bambusowe" },
+      { "id": "zaluzje_pionowe", "label": "Żaluzje pionowe" }
+    ]
+  },
+  {
+    "id": "przeslony_zewnetrzne",
+    "label": "Przesłony zewnętrzne",
+    "items": [
+      { "id": "rolety_zewnetrzne", "label": "Rolety zewnętrzne" },
+      { "id": "rolety_screen", "label": "Rolety typu screen" },
+      { "id": "zaluzje_zewnetrzne", "label": "Żaluzje zewnętrzne" },
+      { "id": "moskitiery", "label": "Moskitiery" },
+      { "id": "markizy", "label": "Markizy" }
+    ]
+  },
+  {
+    "id": "inne",
+    "label": "Inne",
+    "items": [
+      {
+        "id": "automatyka",
+        "label": "Automatyka do rolet i bram"
+      }
+    ]
+  }
+]

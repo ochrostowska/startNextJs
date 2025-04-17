@@ -1,80 +1,28 @@
 [
   {
-    "title": "product.rollerBlinds",
-    "titleHref": "/produkty/rolety",
+    "title": "Przesłony wewnętrzne",
     "items": [
-      {
-        "icon": "/products/materialowa.svg",
-        "label": "product.materialBlinds",
-        "href": "/produkty/materialowe",
-        "alt": "Roleta materiałowa"
-      },
-      {
-        "icon": "/products/dziennoc.svg",
-        "label": "product.dayNightBlinds",
-        "href": "/produkty/dziennoc",
-        "alt": "Roleta dzień-noc"
-      },
-      {
-        "icon": "/products/plisa.svg",
-        "label": "product.pleatedBlinds",
-        "href": "/produkty/plisy",
-        "alt": "Roleta plisowana"
-      },
-      {
-        "icon": "/products/rzymska.svg",
-        "label": "product.romanianBlinds",
-        "href": "/produkty/rzymskie",
-        "alt": "Roleta rzymska"
-      },
-      {
-        "icon": "/products/dachowa.svg",
-        "label": "product.roofBlinds",
-        "href": "/produkty/dachowa",
-        "alt": "Roleta dachowa"
-      },
-      {
-        "icon": "/products/roletascreen.svg",
-        "label": "product.screenRollerBlind",
-        "href": "/produkty/screen",
-        "alt": "Roleta screen"
-      }
+      { "label": "Rolety materiałowe" },
+      { "label": "Rolety dzień-noc" },
+      { "label": "Plisy" },
+      { "label": "Zasłony rzymskie" },
+      { "label": "Zasłony materiałowe" },
+      { "label": "Żaluzje aluminiowe" },
+      { "label": "Żaluzje drewniane i bambusowe" },
+      { "label": "Żaluzje pionowe" }
     ]
   },
   {
-    "title": "product.horizontalBlinds",
-    "titleHref": "/produkty/zaluzje",
+    "title": "Przesłony zewnętrzne",
     "items": [
-      {
-        "icon": "/products/aluminiowa.svg",
-        "label": "product.aluminiumBlinds",
-        "href": "/produkty/aluminiowe",
-        "alt": "Żaluzja aluminiowa"
-      },
-      {
-        "icon": "/products/drewniana.svg",
-        "label": "product.woodenBlinds",
-        "href": "/produkty/drewniane",
-        "alt": "Żaluzja drewniana"
-      }
+      { "label": "Rolety zewnętrzne" },
+      { "label": "Rolety typu screen" },
+      { "label": "Żaluzje zewnętrzne" },
+      { "label": "Moskitiery" }
     ]
   },
   {
-    "title": "product.mosquitoNets",
-    "titleHref": "/produkty/moskitiery",
-    "items": [
-      {
-        "icon": "/products/moskitiera.svg",
-        "label": "product.mosquitoNetWindows",
-        "href": "/produkty/moskitieryokienne",
-        "alt": "Moskitiery okienne"
-      },
-      {
-        "icon": "/products/drewniana.svg",
-        "label": "product.mosquitoNetDoors",
-        "href": "/produkty/drewniane",
-        "alt": "Żaluzja drewniana"
-      }
-    ]
+    "title": "Inne",
+    "items": [{ "label": "Automatyka do rolet i bram" }]
   }
 ]

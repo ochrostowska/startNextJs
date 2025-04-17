@@ -41,12 +41,9 @@ const Anchor = styled.a`
   align-items: center;
 
   &:hover {
-    ${Label} {
-      box-shadow: inset 0 -1.3rem 0 ${(props) => props.theme.colors.primaryLight};
-    }
     ${GalleryItemStyled} {
       box-shadow: 6px 6px 0px 0px ${COLORS.primaryDark};
-      scale: 1.04;
+      scale: 1.05;
     }
   }
   cursor: pointer;

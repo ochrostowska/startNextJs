@@ -19,7 +19,7 @@ type Props = {
   measurementCards: MeasurementCard[];
 };
 
-export default function (props: Props) {
+export default function KartyPomiarowePage(props: Props) {
   return (
     <>
       <Head title={"Karty pomiarowe"} />

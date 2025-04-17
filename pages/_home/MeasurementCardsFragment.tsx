@@ -20,7 +20,7 @@ type Props = {
 };
 
 const MeasurementCardsFragment = ({
-  measurementCards,
+  measurementCards = [],
   hidePhoto = false,
   numberOfCards,
   addShowMoreButton,

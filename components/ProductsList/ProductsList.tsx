@@ -1,24 +1,16 @@
-import { ProductSection } from "./ProductSection";
-import { ProductsListSection } from "./types";
+import { ProductTypeBasic } from "@/data/types";
+import { ProductSectionBasic } from "./ProductSectionBasic";
 
-type Props = { sections: ProductsListSection[] };
-export const ProductsList = (props: Props) => {
-  const { sections } = props;
-  if (!sections?.length) return null;
+type Props = { productTypes: ProductTypeBasic[] };
+export const ProductsList = ({ productTypes }: Props) => {
+  if (!productTypes?.length) return null;
 
   return (
     <>
-      {sections.map((section, index) => {
-        const { title, titleHref, items } = section;
+      {productTypes.map((section, index) => {
+        const { label } = section;
 
-        return (
-          <ProductSection
-            title={title}
-            titleHref={titleHref}
-            key={titleHref}
-            items={items}
-          />
-        );
+        return <ProductSectionBasic key={label} {...section} />;
       })}
     </>
   );

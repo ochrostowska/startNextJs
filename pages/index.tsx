@@ -1,26 +1,25 @@
 // import { Buttonex } from "@/stories/Buttonex";
-import { ProductsListSection } from "@/components/ProductsList/types";
 import { Sznurex } from "@/components/Sznurex";
+import { getProductsBasic } from "@/data/getProducts";
+import { ProductTypeBasic } from "@/data/types";
 import { useIsMobile } from "@/hooks/useResponsiveSizeBreakpoint";
 import Footer from "@/layout/footer/Footer";
-import { NavBar } from "@/layout/navbar";
+import { NavBar } from "@/layout/navbar/NavBar";
+import { getCloudinaryImagesData } from "@/services/cloudinary/cloudinaryApi";
+import { RealisationImage } from "@/services/cloudinary/types";
 import {
   getInstallationInstructions,
   getManufacturers,
   getMeasurementCards,
   getProductCategories,
   getProductPageContent,
-  getProducts,
 } from "@/services/contentful/contentfulApi";
 import {
   InstallationInstructions,
   Manufacturer,
   MeasurementCard,
 } from "@/services/contentful/types";
-import { TranslationKeys, translate } from "@/translations";
-import fs from "fs/promises";
 import Head from "next/head";
-import path from "path";
 import styles from "../styles/Home.module.scss";
 import AnimalFriendlyFragment from "./_home/AnimalFriendlyFragment";
 import ContactFragment from "./_home/ContactFragment";
@@ -35,10 +34,12 @@ import ServicesFragment from "./_home/ServicesFragment";
 import WelcomeFragment from "./_home/WelcomeFragment";
 
 type Props = {
-  products: ProductsListSection[];
+  products: ProductTypeBasic[];
   manufacturers: Manufacturer[];
   installationInstructions: InstallationInstructions[];
   measurementCards: MeasurementCard[];
+  realisationImages: RealisationImage[];
+  mapsApiKey: string;
 };
 
 export default function Home(props: Props) {
@@ -59,7 +60,7 @@ export default function Home(props: Props) {
         <Hero />
         <AnimalFriendlyFragment />
         <WelcomeFragment />
-        <ProductsFragment productSections={props.products} />
+        <ProductsFragment productTypes={props.products} />
         <ServicesFragment />
         <MeasurementCardsFragment
           measurementCards={props.measurementCards}
@@ -73,8 +74,8 @@ export default function Home(props: Props) {
         />
 
         <ManufacturersFragment manufacturers={props.manufacturers} />
-        <GalleryFragment />
-        <ContactFragment />
+        <GalleryFragment images={props.realisationImages} />
+        <ContactFragment mapsApiKey={props.mapsApiKey} />
         <EndFragment />
         <Footer />
       </main>
@@ -84,39 +85,52 @@ export default function Home(props: Props) {
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), "data", "products.json");
-  const jsonData = await fs.readFile(filePath);
-  const data = JSON.parse(jsonData.toString()) as ProductsListSection[];
-
-  data.forEach((section) => {
-    section.title = translate(section.title as TranslationKeys);
-    section.items.forEach((item) => {
-      item.label = translate(item.label as TranslationKeys);
-    });
-  });
-
   const manufacturers = await getManufacturers();
   const installationInstructions = await getInstallationInstructions();
   const measurementCards = await getMeasurementCards();
-  console.log("getStaticProps manufacturers", manufacturers);
-  console.log(
-    "getStaticProps installationInstructions",
-    installationInstructions
-  );
+  // console.log("getStaticProps manufacturers", manufacturers);
+  // console.log(
+  //   "getStaticProps installationInstructions",
+  //   installationInstructions
+  // );
 
   const productCategories = await getProductCategories();
   console.log("getStaticProps productCategories", productCategories);
-  const products = await getProducts();
-  console.log("getStaticProps products", products);
+  // const products = await getProducts();
+  // console.log("getStaticProps products", products);
   const productPage = await getProductPageContent("2zCOgLCGuQLIgXvC7Nqrce");
-  console.log("getStaticProps productPage", productPage);
+
+  const realisationImages = await getCloudinaryImagesData(3);
+  //console.log("getStaticProps productPage", productPage);
+
+  // const productsLL = productCategories
+  //   .sort((a, b) => (a.priorytet || 0) - (b.priorytet || 0))
+  //   .map((category) => {
+  //     const matchedProducts: ProductsListItemBasic[] = products
+  //       .filter((product) => product.rodzaj === category.id)
+  //       .map((product) => ({
+  //         label: product.defaultDisplayString,
+  //       }));
+
+  //     return {
+  //       title: category.defaultDisplayString,
+  //       items: matchedProducts,
+  //     };
+  //   })
+  //   .filter((section) => section.items.length > 0);
+
+  // console.log("productsLL", productsLL);
+
+  const products = await getProductsBasic();
 
   return {
     props: {
-      products: data,
+      products,
       manufacturers,
       installationInstructions,
       measurementCards,
+      realisationImages,
+      mapsApiKey: process.env.GOOGLE_API_KEY,
     },
     revalidate: 60 * 60 * 24,
   };

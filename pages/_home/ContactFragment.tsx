@@ -8,7 +8,11 @@ import styled from "styled-components";
 
 export const CONTACT_FRAGMENT_ID = "contact-section";
 
-const ContactFragment = () => {
+type Props = {
+  mapsApiKey: string;
+};
+
+const ContactFragment = ({ mapsApiKey }: Props) => {
   const { translate } = useTranslate();
 
   const { data } = useContactInformation();
@@ -54,7 +58,11 @@ const ContactFragment = () => {
           </ContactPart>
         </Column>
         <Column>
-          <GoogleMapComponent height={300} center={center} />
+          <GoogleMapComponent
+            height={300}
+            center={center}
+            mapsKey={mapsApiKey}
+          />
         </Column>
       </ContactWrapper>
     </Fragment>
