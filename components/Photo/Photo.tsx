@@ -45,6 +45,7 @@ export const Photo = ({
           maxWidth: 1024,
           boxShadow: `${borderShadowDecor[decorLocation]} ${decorTint}`,
         }}
+        priority
         {...rest}
       />
     </div>
