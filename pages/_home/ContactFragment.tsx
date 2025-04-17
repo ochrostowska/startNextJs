@@ -58,11 +58,13 @@ const ContactFragment = ({ mapsApiKey }: Props) => {
           </ContactPart>
         </Column>
         <Column>
-          <GoogleMapComponent
-            height={300}
-            center={center}
-            mapsKey={mapsApiKey}
-          />
+          {mapsApiKey && (
+            <GoogleMapComponent
+              height={300}
+              center={center}
+              mapsKey={mapsApiKey}
+            />
+          )}
         </Column>
       </ContactWrapper>
     </Fragment>
