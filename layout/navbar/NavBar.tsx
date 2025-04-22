@@ -11,8 +11,9 @@ export const NavBar = () => {
 
   return (
     <Navigation>
-      <Logo />
-
+      <Link href="/" passHref>
+        <Logo />
+      </Link>
       <MenuButton onClick={() => setShowNavbar(!showNavbar)}>
         <HamburgerSvg />
       </MenuButton>
@@ -50,6 +51,7 @@ export const NavBar = () => {
 // styled.ts or inside the same file
 import { Routes } from "@/nav/routes";
 import { MEASUREMENT_CARDS_FRAGMENT_ID } from "@/pages/_home/MeasurementCardsFragment";
+import Link from "next/link";
 import { css } from "styled-components";
 
 export const Navigation = styled.nav`
