@@ -31,6 +31,8 @@ const AnimalFriendlyFragment = () => {
         <TextContainer>
           <CenteredP>{translate("animalFriendlyText1")}</CenteredP>
           <H5>{translate("animalFriendlyText2")}</H5>
+          <CenteredP>{translate("animalFriendlyText3")}</CenteredP>
+          <CenteredP>{translate("animalFriendlyText4")}</CenteredP>
         </TextContainer>
       </Wrapper>
     </Fragment>
