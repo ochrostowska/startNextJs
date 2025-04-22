@@ -1,4 +1,4 @@
-import { getScaledImageSize, prefetchImageSize } from "@/helpers/image";
+import { getScaledImageSize } from "@/helpers/image";
 import NextImage from "next/image";
 import { useEffect, useState } from "react";
 import styled, { CSSProperties } from "styled-components";
@@ -10,6 +10,8 @@ export type Props = {
   href?: string;
   alt: string;
   style?: CSSProperties;
+  width?: number;
+  height?: number;
 };
 
 export const GalleryItem = ({
@@ -18,24 +20,18 @@ export const GalleryItem = ({
   alt,
   size = 100,
   style = {},
+  width = 0,
+  height = 0,
 }: Props) => {
-  const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   const [scaledImageSize, setScaledImageSize] = useState({
     width: 0,
     height: 0,
   });
 
   useEffect(() => {
-    prefetchImageSize(src).then(({ width, height }) => {
-      setImageSize({ width, height });
-    });
-  }, [src]);
-
-  useEffect(() => {
-    const { width, height } = imageSize;
     const scaledSize = getScaledImageSize(size, width, height);
     setScaledImageSize(scaledSize);
-  }, [imageSize, size]);
+  }, [size, width, height]);
 
   return (
     <GalleryItemStyled
@@ -44,6 +40,7 @@ export const GalleryItem = ({
       height={scaledImageSize.height}
       alt={alt}
       applyHoverTransition={!!href}
+      priority
       style={{ ...style }}
     />
   );

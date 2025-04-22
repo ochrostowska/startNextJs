@@ -7,24 +7,25 @@ import {
   GalleryItemStyled,
 } from "./GalleryItem";
 
-export type Props = GalleryItemProps & {
+export type Props = Omit<GalleryItemProps, "href"> & {
   label: string;
   subtitle: string;
+  onClick: () => void;
 };
 
 export const LabeledGalleryItem = ({
   label,
-  href,
   subtitle,
+  onClick,
   ...rest
 }: Props) => {
   return (
     <Wrapper>
-      <Anchor href={href}>
-        <GalleryItem {...rest} href={href} />
+      <ClickableDiv onClick={onClick}>
+        <GalleryItem {...rest} />
         <Label>{label}</Label>
         <CenteredP>{subtitle}</CenteredP>
-      </Anchor>
+      </ClickableDiv>
     </Wrapper>
   );
 };
@@ -35,7 +36,7 @@ const Label = styled(H5)`
   text-align: center;
 `;
 
-const Anchor = styled.a`
+const ClickableDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

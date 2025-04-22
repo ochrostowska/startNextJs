@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import { Fragment } from "@/components/Fragment";
 import { LabeledGalleryItem } from "@/components/Gallery";
+import Modal from "@/components/Gallery/Dialog";
 import { H2 } from "@/components/Heading";
 import { useResponsiveValue } from "@/hooks/useResponsiveSize";
 import { Routes } from "@/nav/routes";
@@ -8,6 +9,7 @@ import { getCloudinaryImageUrl } from "@/services/cloudinary/cloudinaryHelpers";
 import { RealisationImage } from "@/services/cloudinary/types";
 import COLORS from "@/styles/colors";
 import { useTranslate } from "@/translations";
+import { useState } from "react";
 import styled from "styled-components";
 
 type Props = {
@@ -24,34 +26,52 @@ const GalleryFragment = ({ images = [] }: Props) => {
     bigDesktop: 320,
   });
 
-  return (
-    <Fragment borderLeftColor={COLORS.secondaryLight} bigPadding>
-      <Wrapper>
-        <H2>{translate("gallery.title")}</H2>
-        <p>{translate("gallery.subtitle")}</p>
-        <GalleryItems>
-          {images.map((image) => (
-            <LabeledGalleryItem
-              key={image.id}
-              src={getCloudinaryImageUrl(image)}
-              alt={translate("gallery.title")}
-              size={maxPhotoSize}
-              label={image.metadata.title}
-              subtitle={image.metadata.desc}
-            />
-          ))}
-        </GalleryItems>
+  const [showGallery, setShowGallery] = useState(false);
+  const [selectedPhotoId, setSelectedPhotoId] = useState<number>();
 
-        <ButtonWrapper>
-          <Button
-            icon="eye"
-            label={translate("gallery.seeMoreButton")}
-            variant="tertiary"
-            href={Routes.Realisations}
-          />
-        </ButtonWrapper>
-      </Wrapper>
-    </Fragment>
+  return (
+    <>
+      {showGallery && (
+        <Modal
+          images={images}
+          selectedPhotoId={selectedPhotoId}
+          onClose={() => setShowGallery(false)}
+        />
+      )}
+      <Fragment borderLeftColor={COLORS.secondaryLight} bigPadding>
+        <Wrapper>
+          <H2>{translate("gallery.title")}</H2>
+          <p>{translate("gallery.subtitle")}</p>
+          <GalleryItems>
+            {images.map((image) => (
+              <LabeledGalleryItem
+                key={image.id}
+                src={getCloudinaryImageUrl(image, { width: maxPhotoSize })}
+                onClick={() => {
+                  setSelectedPhotoId(image.id);
+                  setShowGallery(true);
+                }}
+                alt={translate("gallery.title")}
+                size={maxPhotoSize}
+                label={image.metadata.title}
+                subtitle={image.metadata.desc}
+                width={image.width}
+                height={image.height}
+              />
+            ))}
+          </GalleryItems>
+
+          <ButtonWrapper>
+            <Button
+              icon="eye"
+              label={translate("gallery.seeMoreButton")}
+              variant="tertiary"
+              href={Routes.Realisations}
+            />
+          </ButtonWrapper>
+        </Wrapper>
+      </Fragment>
+    </>
   );
 };
 

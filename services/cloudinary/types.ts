@@ -1,7 +1,7 @@
 export type CloudinaryImage = {
   id: number;
-  height: string;
-  width: string;
+  height: number;
+  width: number;
   public_id: string;
   format: string;
 };
@@ -14,4 +14,5 @@ export type RealisationImageMetadata = {
 
 export type RealisationImage = CloudinaryImage & {
   metadata?: RealisationImageMetadata;
+  blurDataUrl?: string;
 };

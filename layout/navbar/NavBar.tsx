@@ -36,7 +36,7 @@ export const NavBar = () => {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Realizacje</NavLink>
+            <NavLink href={Routes.Realisations}>Realizacje</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="#">Kontakt</NavLink>
@@ -48,6 +48,7 @@ export const NavBar = () => {
 };
 
 // styled.ts or inside the same file
+import { Routes } from "@/nav/routes";
 import { MEASUREMENT_CARDS_FRAGMENT_ID } from "@/pages/_home/MeasurementCardsFragment";
 import { css } from "styled-components";
 

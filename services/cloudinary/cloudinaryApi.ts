@@ -2,14 +2,14 @@ import {
   getCloudinaryImageWithMetadata,
   searchCloudinary,
 } from "./cloudinaryClient";
-import { RealisationImage } from "./types";
+import getBase64ImageUrl from "./cloudinaryHelpers";
+import { CloudinaryImage, RealisationImage } from "./types";
 
 export async function getCloudinaryImagesData(maxResults = 100) {
   const results = await searchCloudinary(
     `${process.env.CLOUDINARY_FOLDER}`,
     maxResults
   );
-  let productImageResults: RealisationImage[] = [];
 
   await Promise.all(
     results.resources.map(async (resource, index) => {
@@ -21,6 +21,12 @@ export async function getCloudinaryImagesData(maxResults = 100) {
     })
   );
 
+  const blurImagePromises = results.resources.map((image: CloudinaryImage) => {
+    return getBase64ImageUrl(image);
+  });
+  const imagesWithBlurDataUrls = await Promise.all(blurImagePromises);
+
+  const productImageResults: RealisationImage[] = [];
   let i = 0;
   for (let result of results.resources) {
     productImageResults.push({
@@ -30,6 +36,7 @@ export async function getCloudinaryImagesData(maxResults = 100) {
       public_id: result.public_id,
       format: result.format,
       metadata: result.metadata,
+      blurDataUrl: imagesWithBlurDataUrls[i],
     });
     i++;
   }
