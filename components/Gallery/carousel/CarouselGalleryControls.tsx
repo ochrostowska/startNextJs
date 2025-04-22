@@ -18,6 +18,7 @@ interface CarouselGalleryControlsProps {
   fullSizeImageUrl: string;
   fileName: string;
   direction?: number;
+  style?: React.CSSProperties;
 }
 
 /* ─── COMPONENT ───────────────────────────────────────────────────── */
@@ -29,11 +30,12 @@ export default function CarouselGalleryControls({
   fullSizeImageUrl,
   fileName,
   onClose,
+  style,
 }: CarouselGalleryControlsProps) {
   const { translate } = useTranslate();
 
   return (
-    <ButtonsContainer>
+    <ButtonsContainer style={style}>
       <>
         {index > 0 && (
           <LeftButton onClick={() => onChangeIndex(index - 1)}>
@@ -105,10 +107,10 @@ const CloseIcon = styled(XMarkIcon)`
 
 /* Wrapper for buttons inside the overlay */
 const ButtonsContainer = styled.div`
+  pointer-events: auto;
   position: relative;
   width: 100%;
-  aspect-ratio: 3/2;
-  max-height: 100%;
+  height: 100%;
 `;
 
 const sharedIconStyles = css`

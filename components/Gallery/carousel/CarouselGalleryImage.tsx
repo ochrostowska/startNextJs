@@ -4,7 +4,6 @@ import Image from "next/image";
 import styled from "styled-components";
 import { CarouselGalleryImageType } from "./types";
 
-// GalleryImage.tsx - Handles the main image display with animations
 type GalleryImageProps = {
   direction: number;
   alt: string;
@@ -26,19 +25,15 @@ export const CarouselGalleryImage = ({
           initial="enter"
           animate="center"
           exit="exit"
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-          }}
         >
-          <Image
+          <StyledImage
             src={image.url}
-            priority
-            blurDataURL={image.blurDataUrl}
-            placeholder="blur"
             alt={alt}
-            fill
+            width={image.width}
+            height={image.height}
+            placeholder="blur"
+            blurDataURL={image.blurDataUrl}
+            priority
           />
         </motion.div>
       </AnimatePresence>
@@ -46,13 +41,20 @@ export const CarouselGalleryImage = ({
   );
 };
 
-/* Centering container for the image */
 const ImageWrapper = styled.div`
   position: relative;
   display: flex;
-  width: 100%;
-  aspect-ratio: 3/2;
   align-items: center;
-  object-fit: contain;
   justify-content: center;
+  max-height: 90vh;
+  width: 100%;
+  overflow: hidden;
+`;
+
+const StyledImage = styled(Image)`
+  max-height: 90vh;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  object-fit: contain;
 `;

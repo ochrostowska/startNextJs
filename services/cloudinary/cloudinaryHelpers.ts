@@ -2,6 +2,7 @@ import { CloudinaryImage } from "./types";
 
 type CloudinaryImageParams = {
   width?: number;
+  height?: number;
   quality?: number;
   format?: string;
 };
@@ -10,10 +11,13 @@ export const getCloudinaryImageUrl = (
   image: CloudinaryImage,
   params: CloudinaryImageParams = {}
 ) => {
-  const { width, quality, format } = params;
+  const { width, height, quality, format } = params;
   const transformationsQuery: string[] = [];
   if (width) {
     transformationsQuery.push(`w_${width}`);
+  }
+  if (height) {
+    transformationsQuery.push(`h_${height}`);
   }
   if (quality) {
     transformationsQuery.push(`q_${quality}`);

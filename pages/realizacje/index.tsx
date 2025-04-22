@@ -1,6 +1,7 @@
 // import { Buttonex } from "@/stories/Buttonex";
 import { Fragment } from "@/components/Fragment";
 import { LabeledGalleryItem } from "@/components/Gallery";
+import Modal from "@/components/Gallery/Dialog";
 import { H1 } from "@/components/Heading";
 import { Sznurex } from "@/components/Sznurex";
 import { getProductsBasic } from "@/data/getProducts";
@@ -36,6 +37,9 @@ export default function RealisationsPage({
 
   const [productTypeFilter, setProductTypeFilter] = useState<string>();
 
+  const [showGallery, setShowGallery] = useState(false);
+  const [selectedPhotoId, setSelectedPhotoId] = useState<number>();
+
   const realisationImagesToDisplay = useMemo(() => {
     if (!productTypeFilter) {
       return productImages;
@@ -58,7 +62,7 @@ export default function RealisationsPage({
 
   return (
     <>
-      <Head title="Realizacje" />
+      <Head title={translate("navRealisations")} />
       <NavBar />
       <main className={`${styles.main} `}>
         <Fragment>
@@ -83,15 +87,28 @@ export default function RealisationsPage({
             {realisationImagesToDisplay.map((image) => (
               <LabeledGalleryItem
                 key={image.id}
-                src={getCloudinaryImageUrl(image)}
+                src={getCloudinaryImageUrl(image, { width: maxPhotoSize })}
                 alt={translate("gallery.title")}
                 size={maxPhotoSize}
                 label={image.metadata.title}
                 subtitle={image.metadata.desc}
+                onClick={() => {
+                  setSelectedPhotoId(image.id);
+                  setShowGallery(true);
+                }}
+                width={image.width}
+                height={image.height}
               />
             ))}
           </GalleryItems>
         </Fragment>
+        {showGallery && (
+          <Modal
+            images={realisationImagesToDisplay}
+            selectedPhotoId={selectedPhotoId}
+            onClose={() => setShowGallery(false)}
+          />
+        )}
       </main>
       <Sznurex />
     </>

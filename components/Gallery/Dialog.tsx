@@ -1,8 +1,8 @@
 import { getCloudinaryImageUrl } from "@/services/cloudinary/cloudinaryHelpers";
 import { RealisationImage } from "@/services/cloudinary/types";
-import { useMemo, useRef, useState } from "react";
+import { useMemo } from "react";
 import BlurredModalContainer from "../Modal/BlurredModalContainer";
-import CarouselGallery from "./SharedModal";
+import CarouselGallery from "./carousel/CarouselGallery";
 
 export default function Modal({
   images,
@@ -13,45 +13,34 @@ export default function Modal({
   selectedPhotoId: number;
   onClose: () => void;
 }) {
-  const index = useRef(
-    Number(images.findIndex((img) => img.id === selectedPhotoId))
-  );
-
-  const [direction, setDirection] = useState(0);
-  const [curIndex, setCurIndex] = useState(index.current);
+  const index = Number(images.findIndex((img) => img.id === selectedPhotoId));
 
   function handleClose() {
     onClose();
   }
 
-  function changePhotoId(newVal: number) {
-    if (newVal > index.current) {
-      setDirection(1);
-    } else {
-      setDirection(-1);
-    }
-    index.current = newVal;
-    setCurIndex(newVal);
-  }
-
   const carouselImages = useMemo(() => {
-    return images.map((img) => ({
-      id: img.id,
-      url: getCloudinaryImageUrl(img, { width: 1920 }),
-      thumbnailUrl: getCloudinaryImageUrl(img, { width: 60 }),
-      fullSizeImageUrl: getCloudinaryImageUrl(img),
-      fileName: `${img.public_id}.jpg`,
-      blurDataUrl: img.blurDataUrl,
-    }));
+    return images.map((img) => {
+      const cloudinarySizeParam = img.width > img.height ? "width" : "height";
+
+      return {
+        id: img.id,
+        url: getCloudinaryImageUrl(img, { [cloudinarySizeParam]: 1920 }),
+        thumbnailUrl: getCloudinaryImageUrl(img, { [cloudinarySizeParam]: 60 }),
+        fullSizeImageUrl: getCloudinaryImageUrl(img),
+        fileName: `${img.public_id}.jpg`,
+        blurDataUrl: img.blurDataUrl,
+        width: img.width,
+        height: img.height,
+      };
+    });
   }, [images]);
 
   return (
     <BlurredModalContainer onClose={handleClose}>
       <CarouselGallery
-        index={curIndex}
-        direction={direction}
+        initialIndex={index}
         images={carouselImages}
-        changePhotoId={changePhotoId}
         closeModal={handleClose}
       />
     </BlurredModalContainer>

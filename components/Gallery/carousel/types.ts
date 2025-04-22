@@ -5,4 +5,6 @@ export interface CarouselGalleryImageType {
   fullSizeImageUrl: string;
   fileName: string;
   blurDataUrl?: string;
+  width: number;
+  height: number;
 }
