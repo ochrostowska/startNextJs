@@ -8,7 +8,6 @@ import { range } from "@/helpers/range";
 import { useTranslate } from "@/translations";
 import CarouselGalleryControls from "./CarouselGalleryControls";
 import { CarouselGalleryImage } from "./CarouselGalleryImage";
-import { CAROUSEL_MAX_WIDTH } from "./constants";
 import { CarouselGalleryImageType } from "./types";
 
 type Props = {
@@ -100,22 +99,21 @@ export default function CarouselGallery({
 
 const ModalWrapper = styled.div`
   position: relative;
-  z-index: 50;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  max-width: ${CAROUSEL_MAX_WIDTH}px;
-  max-height: 90vh; /* Leave some space for margins */
   align-items: center;
-  margin: 0 auto;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 50;
 `;
 
 const OverlayContainer = styled.div`
   position: absolute;
   inset: 0;
   pointer-events: none; /* allow clicks to pass through unless overridden inside children */
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   padding: 1rem;
 `;
