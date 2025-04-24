@@ -12,7 +12,6 @@ import {
   getManufacturers,
   getMeasurementCards,
   getProductCategories,
-  getProductPageContent,
 } from "@/services/contentful/contentfulApi";
 import {
   InstallationInstructions,
@@ -60,6 +59,10 @@ export default function Home(props: Props) {
         <Hero />
         <AnimalFriendlyFragment />
         <WelcomeFragment />
+        <ContactFragment
+          mapsApiKey={props.mapsApiKey}
+          backgroundColor="#fbfbfb"
+        />
         <ProductsFragment productTypes={props.products} />
         <ServicesFragment />
         <MeasurementCardsFragment
@@ -75,7 +78,6 @@ export default function Home(props: Props) {
 
         <ManufacturersFragment manufacturers={props.manufacturers} />
         <GalleryFragment images={props.realisationImages} />
-        <ContactFragment mapsApiKey={props.mapsApiKey} />
         <EndFragment />
         <Footer />
       </main>
@@ -98,7 +100,6 @@ export async function getStaticProps() {
   console.log("getStaticProps productCategories", productCategories);
   // const products = await getProducts();
   // console.log("getStaticProps products", products);
-  const productPage = await getProductPageContent("2zCOgLCGuQLIgXvC7Nqrce");
 
   const realisationImages = await getCloudinaryImagesData(3);
   //console.log("getStaticProps productPage", productPage);

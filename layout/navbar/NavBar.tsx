@@ -1,16 +1,26 @@
 // NavBar.tsx
 import { HamburgerSvg } from "@/components/Svg";
-import { scrollToElement } from "@/helpers/scrollToElement";
-import { PRODUCTS_FRAGMENT_ID } from "@/pages/_home/ProductsFragment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Logo } from "../Logo";
 
 export const NavBar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const { translate } = useTranslate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setHasScrolled(scrollPosition > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <Navigation>
+    <Navigation hasScrolled={hasScrolled}>
       <Link href="/" passHref>
         <Logo />
       </Link>
@@ -20,27 +30,26 @@ export const NavBar = () => {
 
       <NavList active={showNavbar}>
         <ul>
-          <NavItem>
+          {/* <NavItem>
             <NavLink
               as="button"
               onClick={() => scrollToElement(PRODUCTS_FRAGMENT_ID)}
             >
               Oferta
             </NavLink>
-          </NavItem>
+          </NavItem> */}
           <NavItem>
-            <NavLink
-              as="button"
-              onClick={() => scrollToElement(MEASUREMENT_CARDS_FRAGMENT_ID)}
-            >
-              Do pobrania
+            <NavLink href={Routes.Downloads}>
+              {translate("navDownloads")}
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href={Routes.Realisations}>Realizacje</NavLink>
+            <NavLink href={Routes.Realisations}>
+              {translate("navRealisations")}
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="#">Kontakt</NavLink>
+            <NavLink href={Routes.Contact}>{translate("navContact")}</NavLink>
           </NavItem>
         </ul>
       </NavList>
@@ -50,33 +59,37 @@ export const NavBar = () => {
 
 // styled.ts or inside the same file
 import { Routes } from "@/nav/routes";
-import { MEASUREMENT_CARDS_FRAGMENT_ID } from "@/pages/_home/MeasurementCardsFragment";
+import { useTranslate } from "@/translations";
 import Link from "next/link";
 import { css } from "styled-components";
 
-export const Navigation = styled.nav`
+export const Navigation = styled.nav<{ hasScrolled: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.2s;
+  background-color: ${({ theme }) => theme.colors.white};
+  padding-left: ${({ theme }) => theme.constants.fragmentHorizontalOffset};
+  padding-right: ${({ theme }) => theme.constants.fragmentHorizontalOffset};
+  padding-top: ${({ theme }) => theme.constants.fragmentVerticalOffsetTablet};
+  padding-bottom: ${({ theme }) =>
+    theme.constants.fragmentVerticalOffsetTablet};
 
-  margin-left: ${({ theme }) => theme.constants.fragmentHorizontalOffset};
-  margin-right: ${({ theme }) => theme.constants.fragmentHorizontalOffset};
-  margin-top: ${({ theme }) => theme.constants.fragmentVerticalOffset};
+  ${({ hasScrolled }) =>
+    hasScrolled &&
+    css`
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    `}
 
   @media ${({ theme }) => theme.media.tabPort} {
-    margin-left: ${({ theme }) =>
+    padding-left: ${({ theme }) =>
       theme.constants.fragmentHorizontalOffsetTablet};
-    margin-right: ${({ theme }) =>
-      theme.constants.fragmentHorizontalOffsetTablet};
-    margin-top: ${({ theme }) => theme.constants.fragmentVerticalOffsetTablet};
-  }
-
-  @media ${({ theme }) => theme.media.phone} {
-    margin-left: ${({ theme }) =>
-      theme.constants.fragmentHorizontalOffsetTablet};
-    margin-right: ${({ theme }) =>
+    padding-right: ${({ theme }) =>
       theme.constants.fragmentHorizontalOffsetTablet};
   }
 `;
@@ -103,13 +116,14 @@ export const NavList = styled.div<{ active: boolean }>`
   }
 
   @media ${({ theme }) => theme.media.tabPort} {
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
+    bottom: 0;
     padding-top: 8rem;
     padding-left: 2rem;
     background-color: ${({ theme }) => theme.colors.white};
-    height: calc(100vh - 60px);
+    height: 100vh;
     overflow: hidden;
     width: 0;
     transition: all 0.2s;

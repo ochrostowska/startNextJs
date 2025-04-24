@@ -13,6 +13,7 @@ export const Sznurex = () => {
 const SznurexDiv = styled.div`
   position: fixed;
   top: 0;
+  z-index: 1000;
   right: 0;
   width: ${(props) => props.theme.constants.fragmentHorizontalOffset};
   align-items: center;

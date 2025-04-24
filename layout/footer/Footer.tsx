@@ -13,7 +13,7 @@ const Footer = () => {
         <ItemsWrapper>
           <Logo />
           <ContactLine>
-            <a href={`tel:${phone}`}>+48 {phone}</a>
+            <a href={`tel:${phone}`}>{phone}</a>
             <a href={`mailto:${email}`}>{email}</a>
           </ContactLine>
         </ItemsWrapper>

@@ -10,9 +10,10 @@ export const CONTACT_FRAGMENT_ID = "contact-section";
 
 type Props = {
   mapsApiKey: string;
+  backgroundColor?: string;
 };
 
-const ContactFragment = ({ mapsApiKey }: Props) => {
+const ContactFragment = ({ mapsApiKey, backgroundColor }: Props) => {
   const { translate } = useTranslate();
 
   const { data } = useContactInformation();
@@ -30,6 +31,7 @@ const ContactFragment = ({ mapsApiKey }: Props) => {
       id={CONTACT_FRAGMENT_ID}
       borderLeftColor={COLORS.tertiaryLight}
       bigPadding
+      backgroundColor={backgroundColor}
     >
       <H2>{translate("contact.title")}</H2>
 
@@ -47,13 +49,17 @@ const ContactFragment = ({ mapsApiKey }: Props) => {
           <ContactPart>
             <TinyLabel>{translate("contact.phone")}</TinyLabel>
             {phone.map((line) => (
-              <BoldP key={line}>{line}</BoldP>
+              <ClickableLink key={line} href={`tel:${line.replace(/\s/g, "")}`}>
+                <BoldP>{line}</BoldP>
+              </ClickableLink>
             ))}
           </ContactPart>
           <ContactPart>
             <TinyLabel>{translate("contact.email")}</TinyLabel>
             {email.map((line) => (
-              <BoldP key={line}>{line}</BoldP>
+              <ClickableLink key={line} href={`mailto:${line}`}>
+                <BoldP>{line}</BoldP>
+              </ClickableLink>
             ))}
           </ContactPart>
         </Column>
@@ -89,6 +95,17 @@ const ContactPart = styled.div`
 
 const BoldP = styled.p`
   font-weight: bold;
+`;
+
+const ClickableLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const Column = styled.div`

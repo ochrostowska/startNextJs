@@ -3,7 +3,7 @@ import { ContactInformation } from "./types";
 const TABLE_KEY = "contact";
 
 const DEFAULT_DATA: ContactInformation = {
-  phone: ["536 13 13 13"],
+  phone: ["+48 536 13 13 13"],
   email: ["biuro@start.biz.pl"],
   address: "Mieszka I 81, 71-011 Szczecin",
   mapUrl: "",
