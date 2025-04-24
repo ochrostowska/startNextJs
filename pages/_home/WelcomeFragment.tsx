@@ -13,6 +13,8 @@ const WelcomeFragment = () => {
         <WrapperLeft>
           <H2>{translate("helloTitle")}</H2>
           <p>{translate("helloText")}</p>
+          <p>{translate("helloText2")}</p>
+          <p>{translate("helloText3")}</p>
         </WrapperLeft>
         <WrapperRight>
           <WrapperPhoto>
@@ -36,7 +38,7 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  @media ${(props) => props.theme.media.phone} {
+  @media ${(props) => props.theme.media.tabPort} {
     flex-direction: column;
     gap: 3rem;
   }
@@ -48,7 +50,7 @@ const WrapperLeft = styled.div`
   flex-direction: column;
   padding-right: 7em;
   gap: 2rem;
-  @media ${(props) => props.theme.media.phone} {
+  @media ${(props) => props.theme.media.tabPort} {
     padding-right: 1rem;
   }
 `;
@@ -63,8 +65,9 @@ const WrapperPhoto = styled.div`
   width: 90%;
   height: 90%;
   justify-content: flex-end;
-  @media ${(props) => props.theme.media.phone} {
+  @media ${(props) => props.theme.media.tabPort} {
     width: 100%;
+    padding-top: 1rem;
   }
 `;
 

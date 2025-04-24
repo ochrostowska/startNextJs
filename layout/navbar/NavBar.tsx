@@ -72,19 +72,15 @@ export const Navigation = styled.nav<{ hasScrolled: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s;
+  transition: all 0.3s ease-in;
   background-color: ${({ theme }) => theme.colors.white};
   padding-left: ${({ theme }) => theme.constants.fragmentHorizontalOffset};
   padding-right: ${({ theme }) => theme.constants.fragmentHorizontalOffset};
   padding-top: ${({ theme }) => theme.constants.fragmentVerticalOffsetTablet};
   padding-bottom: ${({ theme }) =>
     theme.constants.fragmentVerticalOffsetTablet};
-
-  ${({ hasScrolled }) =>
-    hasScrolled &&
-    css`
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    `}
+  box-shadow: 0 4px 8px
+    rgba(0, 0, 0, ${({ hasScrolled }) => (hasScrolled ? "0.05" : "0")});
 
   @media ${({ theme }) => theme.media.tabPort} {
     padding-left: ${({ theme }) =>
