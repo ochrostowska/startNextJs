@@ -108,7 +108,7 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
 
-  @media ${(props) => props.theme.media.phone} {
+  @media ${(props) => props.theme.media.tabPort} {
     flex-direction: column;
     gap: 4rem;
     align-items: flex-start;

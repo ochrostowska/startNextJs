@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 
+import { NAV_BAR_Z_INDEX } from "@/layout/navbar";
 import { useTranslate } from "@/translations";
 import Image from "next/image";
 import styled from "styled-components";
@@ -59,7 +60,7 @@ export default function CarouselGalleryThumbnails({
 const BottomNavBar = styled.div`
   position: fixed;
   bottom: 0;
-  z-index: 40;
+  z-index: ${NAV_BAR_Z_INDEX + 1};
   width: 100%;
   overflow: hidden;
 `;

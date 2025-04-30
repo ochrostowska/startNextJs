@@ -1,3 +1,4 @@
+import { NAV_BAR_Z_INDEX } from "@/layout/navbar";
 import ANIMATIONS from "@/styles/animations";
 import Image from "next/image";
 import styled from "styled-components";
@@ -13,7 +14,7 @@ export const Sznurex = () => {
 const SznurexDiv = styled.div`
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: ${NAV_BAR_Z_INDEX + 1};
   right: 0;
   width: ${(props) => props.theme.constants.fragmentHorizontalOffset};
   align-items: center;

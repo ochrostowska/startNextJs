@@ -5,6 +5,7 @@ import useKeypress from "react-use-keypress";
 import styled from "styled-components";
 
 import { range } from "@/helpers/range";
+import { NAV_BAR_Z_INDEX } from "@/layout/navbar";
 import { useTranslate } from "@/translations";
 import CarouselGalleryControls from "./CarouselGalleryControls";
 import { CarouselGalleryImage } from "./CarouselGalleryImage";
@@ -98,14 +99,14 @@ export default function CarouselGallery({
 }
 
 const ModalWrapper = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  z-index: 50;
+  z-index: ${NAV_BAR_Z_INDEX + 1};
 `;
 
 const OverlayContainer = styled.div`

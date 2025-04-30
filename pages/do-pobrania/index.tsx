@@ -1,7 +1,7 @@
-// import { Buttonex } from "@/stories/Buttonex";
 import { Fragment } from "@/components/Fragment";
 import { H1 } from "@/components/Heading";
 import { Sznurex } from "@/components/Sznurex";
+import Footer from "@/layout/footer/Footer";
 import { Head } from "@/layout/Head";
 import { NavBar } from "@/layout/navbar";
 import {
@@ -14,7 +14,6 @@ import {
 } from "@/services/contentful/types";
 import { translate } from "@/translations";
 import { sortBy } from "lodash";
-import styles from "../../styles/Home.module.scss";
 import InstallInstructionFragment from "../_home/InstallInstructionsFragment";
 import MeasurementCardsFragment from "../_home/MeasurementCardsFragment";
 
@@ -26,19 +25,17 @@ type Props = {
 export default function DoPobrania(props: Props) {
   return (
     <>
-      <Head title="Do pobrania" />
+      <Head title={translate("downloads.title")} />
       <NavBar />
-      <main className={`${styles.main} `}>
-        <Fragment>
-          <H1>{translate("downloads.title")}</H1>
-          <p>{translate("downloads.subtitle")}</p>
-        </Fragment>
-        <MeasurementCardsFragment measurementCards={props.measurementCards} />
-
-        <InstallInstructionFragment
-          instructions={props.installationInstructions}
-        />
-      </main>
+      <Fragment>
+        <H1>{translate("downloads.title")}</H1>
+        <p>{translate("downloads.subtitle")}</p>
+      </Fragment>
+      <MeasurementCardsFragment measurementCards={props.measurementCards} />
+      <InstallInstructionFragment
+        instructions={props.installationInstructions}
+      />
+      <Footer />
       <Sznurex />
     </>
   );
@@ -47,9 +44,6 @@ export default function DoPobrania(props: Props) {
 export async function getStaticProps() {
   const installationInstructions = await getInstallationInstructions();
   const measurementCards = sortBy(await getMeasurementCards(), "nazwa");
-
-  console.log("installationInstructions", installationInstructions);
-  console.log("measurementCards ", measurementCards);
 
   const props: Props = {
     installationInstructions,

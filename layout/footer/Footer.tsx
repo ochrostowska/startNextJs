@@ -24,6 +24,9 @@ const Footer = () => {
 
 const BorderWrapper = styled.div`
   border-top: 3px dashed ${(props) => props.theme.colors.almostBlack};
+  width: 100%;
+  margin-top: auto;
+  background-color: ${(props) => props.theme.colors.white};
 `;
 
 const ItemsWrapper = styled.div`

@@ -1,3 +1,4 @@
+import { NAV_BAR_Z_INDEX } from "@/layout/navbar";
 import { Dialog } from "@headlessui/react";
 import { motion } from "framer-motion";
 import { PropsWithChildren, useRef } from "react";
@@ -36,7 +37,7 @@ export default function BlurredModalContainer({
 const StyledDialog = styled(Dialog)`
   position: fixed;
   inset: 0;
-  z-index: 10;
+  z-index: ${NAV_BAR_Z_INDEX + 1};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +46,6 @@ const StyledDialog = styled(Dialog)`
 const StyledDialogOverlay = styled(motion.div)`
   position: fixed;
   inset: 0;
-  z-index: 30;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(8px);
 `;

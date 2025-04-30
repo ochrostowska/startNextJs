@@ -1,8 +1,9 @@
 import { Sznurex } from "@/components/Sznurex";
+import Footer from "@/layout/footer/Footer";
 import { Head } from "@/layout/Head";
 import { NavBar } from "@/layout/navbar";
 import { useTranslate } from "@/translations";
-import styles from "../../styles/Home.module.scss";
+import styled from "styled-components";
 import ContactFragment from "../_home/ContactFragment";
 
 type Props = {
@@ -15,13 +16,21 @@ export default function KontaktPage(props: Props) {
     <>
       <Head title={translate("contact.title")} />
       <NavBar />
-      <main className={`${styles.main} `}>
+      <MainContent>
         <ContactFragment mapsApiKey={props.mapsApiKey} />
-      </main>
+      </MainContent>
+      <Footer />
       <Sznurex />
     </>
   );
 }
+
+const MainContent = styled.main`
+  flex: 1;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 export async function getStaticProps() {
   const props: Props = {

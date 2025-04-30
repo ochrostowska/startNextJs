@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Logo } from "../Logo";
 
+export const NAV_BAR_Z_INDEX = 1000;
+
 export const NavBar = () => {
   const [showNavbar, setShowNavbar] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -68,7 +70,7 @@ export const Navigation = styled.nav<{ hasScrolled: boolean }>`
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: ${NAV_BAR_Z_INDEX};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +98,7 @@ export const MenuButton = styled.div`
   @media ${({ theme }) => theme.media.tabPort} {
     display: block;
     cursor: pointer;
-    z-index: 1000;
+    z-index: ${NAV_BAR_Z_INDEX};
   }
 `;
 
